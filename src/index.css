@@ -4,7 +4,9 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	transition: all 0.3s ease;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	list-style: none;
 }
 
 body {

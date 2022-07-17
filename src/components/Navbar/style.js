@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const Wrapper = styled.div``;
+
 export const Container = styled.div`
   background-color: var(--primaryColor);
   color: var(--defaultColor)
@@ -35,8 +37,10 @@ export const LogoLink = styled(NavLink)`
 
 export const LogoImg = styled.img``;
 
-export const LogoTitle = styled.h2`
+export const LogoTitle = styled.div`
 	margin-left: 11px;
+	font-weight: 600;
+	font-size: 18px;
 	color: var(--defaultColor);
 `;
 
@@ -59,6 +63,10 @@ Navigation.NavLinkHref = styled(NavLink)`
 	color: var(--defaultColor);
 	line-height: 24px;
 	font-weight: 400;
+
+	&.active {
+		color: var(--activeColor);
+	}
 `;
 
 export const NavButton = styled.button`

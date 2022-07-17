@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
 import {
@@ -8,32 +9,42 @@ import {
 	LogoLink,
 	LogoTitle,
 	Nav,
+	NavButton,
 	Navigation,
+	Wrapper,
 } from "./style";
 
 const Navbar = () => {
 	return (
-		<Container>
-			<Nav>
-				<Logo>
-					<LogoLink to="/">
-						<LogoImg src={logo} />
-						<LogoTitle>Houzing</LogoTitle>
-					</LogoLink>
-				</Logo>
-				<Navigation>
-					<Navigation.NavList>
-						<Navigation.NavItem>
-							{navbar.map((value) => {
+		<Wrapper>
+			<Container>
+				<Nav>
+					<Logo>
+						<LogoLink to="/">
+							<LogoImg src={logo} />
+							<LogoTitle>Houzing</LogoTitle>
+						</LogoLink>
+					</Logo>
+					<Navigation>
+						<Navigation.NavList>
+							{navbar?.map((value) => {
 								return (
-									<Navigation.NavLinkHref to={value.path}>{value.title}</Navigation.NavLinkHref>
+									<Navigation.NavItem key={value.id}>
+										<Navigation.NavLinkHref to={value.path}>
+											{value.title}
+										</Navigation.NavLinkHref>
+									</Navigation.NavItem>
 								);
 							})}
-						</Navigation.NavItem>
-					</Navigation.NavList>
-				</Navigation>
-			</Nav>
-		</Container>
+							<Navigation.NavLinkHref to={"/login"}>
+								<NavButton>Login</NavButton>
+							</Navigation.NavLinkHref>
+						</Navigation.NavList>
+					</Navigation>
+				</Nav>
+			</Container>
+			<Outlet />
+		</Wrapper>
 	);
 };
 

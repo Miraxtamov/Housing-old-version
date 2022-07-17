@@ -9,5 +9,4 @@ export const navbar = [
 		element: <Generic />,
 	},
 	{ id: 3, title: "Contacts", path: "/contacts", element: <Generic /> },
-	{ id: 4, title: "Login", path: "/login", element: <Generic /> },
 ];
