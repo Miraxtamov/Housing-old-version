@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
+import FilterSearchButton from "../FilterSearchButton";
 import {
 	Container,
 	Logo,
@@ -16,7 +17,8 @@ import {
 
 const Navbar = () => {
 	return (
-		<Wrapper>
+		<>
+			{/* <Wrapper> */}
 			<Container>
 				<Nav>
 					<Logo>
@@ -43,8 +45,10 @@ const Navbar = () => {
 					</Navigation>
 				</Nav>
 			</Container>
+			{/* </Wrapper> */}
+			<FilterSearchButton />
 			<Outlet />
-		</Wrapper>
+		</>
 	);
 };
 

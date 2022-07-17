@@ -20,3 +20,9 @@ body {
 	--secondaryColor: #696969;
 	--activeColor: #0061df;
 }
+
+button:active {
+	transform: scale(0.98);
+	opacity: 0.7;
+	transition: .1s ease-in-out;
+}
