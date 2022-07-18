@@ -20,7 +20,7 @@ const FilterSearchButton = () => {
 	const [openModal, setOpenModal] = useState(false);
 
 	const openModalBtn = () => {
-		setOpenModal({ openModal: !openModal });
+		setOpenModal({ openModal: !setOpenModal });
 	};
 
 	return (

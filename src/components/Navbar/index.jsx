@@ -12,13 +12,11 @@ import {
 	Nav,
 	NavButton,
 	Navigation,
-	Wrapper,
 } from "./style";
 
 const Navbar = () => {
 	return (
 		<>
-			{/* <Wrapper> */}
 			<Container>
 				<Nav>
 					<Logo>
@@ -45,7 +43,6 @@ const Navbar = () => {
 					</Navigation>
 				</Nav>
 			</Container>
-			{/* </Wrapper> */}
 			<FilterSearchButton />
 			<Outlet />
 		</>
