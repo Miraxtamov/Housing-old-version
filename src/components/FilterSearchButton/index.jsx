@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	FilterButtonImg,
@@ -14,18 +14,15 @@ import status from "../../assets/icons/status.svg";
 import filter from "../../assets/icons/filter.svg";
 import search from "../../assets/icons/search.svg";
 
-import { Button, Popover } from "antd";
-
-const text = <span>Title</span>;
-const content = (
-	<div>
-		<p>Content</p>
-		<p>Content</p>
-	</div>
-);
-const buttonWidth = 310;
+import AdvancedModal from "../AdvancedModal";
 
 const FilterSearchButton = () => {
+	const [openModal, setOpenModal] = useState(false);
+
+	const openModalBtn = () => {
+		setOpenModal({ openModal: !openModal });
+	};
+
 	return (
 		<Container>
 			<FilterSearchContainer>
@@ -41,7 +38,7 @@ const FilterSearchButton = () => {
 					<FilterButtonImg src={price} alt="Price Icon" />
 					Price
 				</FilterSearchButtons>
-				<FilterSearchButtons>
+				<FilterSearchButtons onClick={openModalBtn}>
 					<FilterButtonImg src={filter} alt="Filter Icon" />
 					Advanced
 				</FilterSearchButtons>
@@ -50,6 +47,7 @@ const FilterSearchButton = () => {
 					Search
 				</FilterSearchButtonsSearch>
 			</FilterSearchContainer>
+			{openModal && <AdvancedModal closeModal={setOpenModal} />}
 		</Container>
 	);
 };

@@ -7,12 +7,12 @@ export const Container = styled.div`
 	padding-right: 130px;
 	padding-left: 130px;
 	margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const FilterSearchContainer = styled.div`
 	display: flex;
 	align-items: center;
-	margin-bottom: 64px;
 `;
 
 export const FilterSearchInputContainer = styled.div`
