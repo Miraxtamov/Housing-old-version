@@ -21,7 +21,6 @@ export const HomeBgImg = styled.img`
 	height: 571px;
 	object-fit: cover;
 	filter: brightness(30%);
-	margin-top: 8px;
 `;
 
 export const HomeTextsContainer = styled.div`
@@ -82,13 +81,4 @@ HomeTextsContainer.Price = styled.div`
 	font-size: 28px;
 	line-height: 36px;
 	margin-bottom: 48px;
-`;
-
-HomeTextsContainer.Button = styled.button`
-	border-radius: 2px;
-	border: 1px solid var(--defaultColor);
-	padding: 12px 40px;
-	background-color: transparent;
-	color: var(--defaultColor);
-	cursor: pointer;
 `;

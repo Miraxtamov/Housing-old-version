@@ -7,10 +7,10 @@
 	transition: all 0.2s ease;
 	text-decoration: none;
 	list-style: none;
+	font-family: "Montserrat", sans-serif;
 }
 
 body {
-	font-family: "Montserrat", sans-serif;
 	background-color: #ffffff;
 }
 
@@ -19,10 +19,4 @@ body {
 	--primaryColor: #0d263b;
 	--secondaryColor: #696969;
 	--activeColor: #0061df;
-}
-
-button:active {
-	transform: scale(0.98);
-	opacity: 0.7;
-	transition: .1s ease-in-out;
 }

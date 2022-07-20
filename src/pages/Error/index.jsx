@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "./style";
 import { Button, Result } from "antd";
-import "antd/dist/antd.css";
 
 const ErrorPage = () => {
 	return (

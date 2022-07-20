@@ -14,6 +14,7 @@ export const Nav = styled.div`
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	padding: 14px 130px 14px 130px;
 
 	-webkit-touch-callout: none; // iOS Safari
@@ -45,7 +46,8 @@ export const LogoTitle = styled.div`
 `;
 
 export const Navigation = styled.div`
-	margin-left: auto;
+	display: flex;
+	justify-content: space-between;
 `;
 
 Navigation.NavList = styled.div`
@@ -67,16 +69,4 @@ Navigation.NavLinkHref = styled(NavLink)`
 	&.active {
 		color: var(--activeColor);
 	}
-`;
-
-export const NavButton = styled.button`
-	color: var(--defaultColor);
-	padding: 12px 40px;
-	background-color: transparent;
-	border: 1px solid var(--defaultColor);
-	border-radius: 2px;
-	cursor: pointer;
-	font-size: 14px;
-	line-height: 20px;
-	margin-left: 238px;
 `;

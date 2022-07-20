@@ -1,53 +1,42 @@
 import React from "react";
+import Button from "../Generic/Button";
+import Input from "../Generic/Input";
 import {
 	ModalAddressContainer,
 	ModalButtonContainer,
 	ModalContainer,
 } from "./style";
 
-const AdvancedModal = ({ closeModal }) => {
+const AdvancedModal = () => {
 	return (
-		<div>
-			<ModalContainer>
-				<ModalContainer.Title>Address</ModalContainer.Title>
-				<ModalAddressContainer>
-					<ModalAddressContainer.ModalAddressInput
-						firstML
-						placeholder="Country"
-					/>
-					<ModalAddressContainer.ModalAddressInput placeholder="Region" />
-					<ModalAddressContainer.ModalAddressInput placeholder="City" />
-					<ModalAddressContainer.ModalAddressInput placeholder="Zip code" />
-				</ModalAddressContainer>
-				<ModalContainer.Title>Apartment info</ModalContainer.Title>
-				<ModalAddressContainer>
-					<ModalAddressContainer.ModalAddressInput
-						firstML
-						placeholder="Rooms"
-					/>
-					<ModalAddressContainer.ModalAddressInput placeholder="Size" />
-					<ModalAddressContainer.ModalAddressInput placeholder="Sort" />
-				</ModalAddressContainer>
-				<ModalContainer.Title>Price</ModalContainer.Title>
-				<ModalAddressContainer>
-					<ModalAddressContainer.ModalAddressInput
-						firstML
-						placeholder="Mix price"
-					/>
-					<ModalAddressContainer.ModalAddressInput placeholder="Min price" />
-				</ModalAddressContainer>
-				<ModalButtonContainer>
-					<ModalButtonContainer.ModalCancelButton
-						onClick={() => closeModal(false)}
-					>
-						Cancel
-					</ModalButtonContainer.ModalCancelButton>
-					<ModalButtonContainer.ModalSubmitButton>
-						Submit
-					</ModalButtonContainer.ModalSubmitButton>
-				</ModalButtonContainer>
-			</ModalContainer>
-		</div>
+		<ModalContainer>
+			<ModalContainer.Title>Address</ModalContainer.Title>
+			<ModalAddressContainer>
+				<Input width={"100%"} placeholder="Country" />
+				<Input width={"100%"} placeholder="Region" />
+				<Input width={"100%"} placeholder="City" />
+				<Input width={"100%"} placeholder="Zip code" />
+			</ModalAddressContainer>
+			<ModalContainer.Title>Apartment info</ModalContainer.Title>
+			<ModalAddressContainer>
+				<Input width={"100%"} placeholder="Rooms" />
+				<Input width={"100%"} placeholder="Size" />
+				<Input width={"100%"} placeholder="Sort" />
+			</ModalAddressContainer>
+			<ModalContainer.Title>Price</ModalContainer.Title>
+			<ModalAddressContainer>
+				<Input width={"100%"} placeholder="Mix price" />
+				<Input width={"100%"} placeholder="Min price" />
+			</ModalAddressContainer>
+			<ModalButtonContainer>
+				<Button type={"secondary"} width={"131px"}>
+					Cancel
+				</Button>
+				<Button mr={"15"} type={"primary"} width={"131px"}>
+					Submit
+				</Button>
+			</ModalButtonContainer>
+		</ModalContainer>
 	);
 };
 

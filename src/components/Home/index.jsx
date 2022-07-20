@@ -1,6 +1,5 @@
 import React from "react";
 import { Carousel } from "antd";
-import "antd/dist/antd.css";
 import homeHouse1 from "../../assets/imgs/house-home1.png";
 import homeHouse2 from "../../assets/imgs/house-home2.png";
 import bed from "../../assets/icons/bed.svg";
@@ -15,12 +14,13 @@ import {
 	HomeTextsContainer,
 	Wrapper,
 } from "./style";
+import Button from "../Generic/Button";
 
 const Home = () => {
 	return (
 		<Wrapper>
 			<Container>
-				<Carousel autoplay>
+				<Carousel dots autoplay>
 					<HomeImgContainer>
 						<HomeBgImg src={homeHouse1} alt="Home House" />
 					</HomeImgContainer>
@@ -54,7 +54,7 @@ const Home = () => {
 						</HomeTextsContainer.ImgText>
 					</HomeTextsContainer.ImgsContainer>
 					<HomeTextsContainer.Price>$5,250/mo</HomeTextsContainer.Price>
-					<HomeTextsContainer.Button>Read more</HomeTextsContainer.Button>
+					<Button width={"180px"}>Read more</Button>
 				</HomeTextsContainer>
 			</Container>
 		</Wrapper>

@@ -2,52 +2,45 @@ import React, { useState } from "react";
 import {
 	Container,
 	FilterButtonImg,
-	FilterSearchButtons,
-	FilterSearchButtonsSearch,
 	FilterSearchContainer,
-	FilterSearchInput,
-	FilterSearchInputContainer,
+	InputImg,
 } from "./style";
 import inputHome from "../../assets/icons/inputHome.svg";
 import price from "../../assets/icons/price.svg";
 import status from "../../assets/icons/status.svg";
 import filter from "../../assets/icons/filter.svg";
 import search from "../../assets/icons/search.svg";
+import { Popover } from "antd";
 
 import AdvancedModal from "../AdvancedModal";
+import Button from "../Generic/Button";
+import InputGeneric from "../Generic/Input";
 
 const FilterSearchButton = () => {
-	const [openModal, setOpenModal] = useState(false);
-
-	const openModalBtn = () => {
-		setOpenModal({ openModal: !setOpenModal });
-	};
+	const content = <AdvancedModal />;
 
 	return (
 		<Container>
 			<FilterSearchContainer>
-				<FilterSearchInputContainer>
-					<FilterSearchInput.Img src={inputHome} alt="Input Home" />
-					<FilterSearchInput placeholder="Enter an address, neighborhood, city, or ZIP code" />
-				</FilterSearchInputContainer>
-				<FilterSearchButtons>
-					<FilterButtonImg src={status} alt="Status Icon" />
-					Status
-				</FilterSearchButtons>
-				<FilterSearchButtons>
-					<FilterButtonImg src={price} alt="Price Icon" />
-					Price
-				</FilterSearchButtons>
-				<FilterSearchButtons onClick={openModalBtn}>
-					<FilterButtonImg src={filter} alt="Filter Icon" />
-					Advanced
-				</FilterSearchButtons>
-				<FilterSearchButtonsSearch>
+				<InputGeneric
+					pl={"44px"}
+					placeholder="Enter an address, neighborhood, city, or ZIP code"
+				>
+					<InputImg src={inputHome} alt="Input Home" />
+				</InputGeneric>
+				<Popover trigger="click" placement="bottomRight" content={content}>
+					<div>
+						<Button width={"131px"} height={"44px"} type={"secondary"}>
+							<FilterButtonImg src={filter} alt="Filter Icon" />
+							Advanced
+						</Button>
+					</div>
+				</Popover>
+				<Button width={"180px"} type="primary">
 					<FilterButtonImg src={search} alt="Search Icon" />
 					Search
-				</FilterSearchButtonsSearch>
+				</Button>
 			</FilterSearchContainer>
-			{openModal && <AdvancedModal closeModal={setOpenModal} />}
 		</Container>
 	);
 };

@@ -9,7 +9,7 @@ const getType = (type) => {
 			};
 		case "primary":
 			return {
-				background: "var(----activeColor)",
+				background: "var(--activeColor)",
 				color: "var(--defaultColor)",
 				border: "none",
 			};

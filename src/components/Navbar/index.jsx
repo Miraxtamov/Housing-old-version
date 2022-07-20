@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
 import FilterSearchButton from "../FilterSearchButton";
+import Button from "../Generic/Button";
 import {
 	Container,
 	Logo,
@@ -10,7 +11,6 @@ import {
 	LogoLink,
 	LogoTitle,
 	Nav,
-	NavButton,
 	Navigation,
 } from "./style";
 
@@ -36,11 +36,11 @@ const Navbar = () => {
 									</Navigation.NavItem>
 								);
 							})}
-							<Navigation.NavLinkHref to={"/login"}>
-								<NavButton>Login</NavButton>
-							</Navigation.NavLinkHref>
 						</Navigation.NavList>
 					</Navigation>
+					<Navigation.NavLinkHref to={"/login"}>
+						<Button width={"120px"}>Login</Button>
+					</Navigation.NavLinkHref>
 				</Nav>
 			</Container>
 			<FilterSearchButton />
