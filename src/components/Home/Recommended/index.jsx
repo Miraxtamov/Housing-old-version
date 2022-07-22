@@ -8,6 +8,10 @@ const items = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
 const Recommended = () => {
 	return (
 		<Container>
+			<Container.Title className="title">Recommended</Container.Title>
+			<Container.Description className="description">
+				Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+			</Container.Description>
 			<AliceCarousel
 				responsive={{
 					0: {

@@ -14,10 +14,43 @@ export const Container = styled.div`
 	margin-bottom: 96px;
 `;
 
+export const ArrowsImg = styled.div`
+	max-width: 1180px;
+	/* margin: auto; */
+	position: absolute;
+	/* left: 50%; */
+	top: 400px;
+	/* transform: translate(-50%, -50%	); */
+	/* display: flex;
+	justify-content: space-between; */
+	/* z-index: 8; */
+
+	.left {
+		position: absolute;
+		right: 592px;
+	}
+
+	.right {
+		position: absolute;
+		left: 592px;
+	}
+`;
+
 export const ArrowImg = styled.img`
 	position: absolute;
-	top: 50%;
-	left: 5%;
+	width: 45px;
+	height: 45px;
+	background: var(--defaultColor);
+	color: var(--defaultColor);
+	opacity: 0.2;
+	/* transform: matrix(-1, 0, 0, 1, 0, 0); */
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 9999;
+
+	&:hover {
+		opacity: 0.7;
+	}
 `;
 
 export const HomeImgContainer = styled.div``;

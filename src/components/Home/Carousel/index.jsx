@@ -6,11 +6,12 @@ import bed from "../../../assets/icons/bed.svg";
 import bath from "../../../assets/icons/bath.svg";
 import garage from "../../../assets/icons/garage.svg";
 import ruler from "../../../assets/icons/ruler.svg";
-import next from "../../../assets/icons/next.svg";
 import prev from "../../../assets/icons/prev.svg";
+import next from "../../../assets/icons/next.svg";
 
 import {
 	ArrowImg,
+	ArrowsImg,
 	Container,
 	HomeBgImg,
 	HomeImgContainer,
@@ -33,8 +34,18 @@ const Carousel1 = () => {
 
 	return (
 		<Wrapper>
-			<ArrowImg onClick={() => slider.current?.prev()} />
-			<ArrowImg onClick={() => slider.current?.next()} />
+			<ArrowsImg>
+				<ArrowImg
+					className="left"
+					src={prev}
+					onClick={() => slider?.current?.prev()}
+				/>
+				<ArrowImg
+					className="right"
+					src={next}
+					onClick={() => slider?.current?.next()}
+				/>
+			</ArrowsImg>
 			<Container>
 				<Carousel autoplay>
 					<div>
