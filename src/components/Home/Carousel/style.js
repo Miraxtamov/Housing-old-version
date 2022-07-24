@@ -16,14 +16,8 @@ export const Container = styled.div`
 
 export const ArrowsImg = styled.div`
 	max-width: 1180px;
-	/* margin: auto; */
 	position: absolute;
-	/* left: 50%; */
 	top: 400px;
-	/* transform: translate(-50%, -50%	); */
-	/* display: flex;
-	justify-content: space-between; */
-	/* z-index: 8; */
 
 	.left {
 		position: absolute;
@@ -40,16 +34,19 @@ export const ArrowImg = styled.img`
 	position: absolute;
 	width: 45px;
 	height: 45px;
-	background: var(--defaultColor);
-	color: var(--defaultColor);
-	opacity: 0.2;
-	/* transform: matrix(-1, 0, 0, 1, 0, 0); */
+	padding: 12px;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: var(--primaryColor);
 	border-radius: 50%;
 	cursor: pointer;
 	z-index: 9999;
 
 	&:hover {
-		opacity: 0.7;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	path {
+		fill: var(--primaryColor);
 	}
 `;
 

@@ -4,13 +4,18 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import "antd/dist/antd.css";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 import Root from "./root";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<Root />
-		</BrowserRouter>
+		<QueryClientProvider client={queryClient}>
+			<BrowserRouter>
+				<Root />
+			</BrowserRouter>
+		</QueryClientProvider>
 	</React.StrictMode>
 );

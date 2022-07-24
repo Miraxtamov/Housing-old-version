@@ -1,28 +1,24 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
-
 export const Container = styled.div`
 	max-width: 1440px;
 	margin: 0 auto;
 	padding-right: 130px;
 	padding-left: 130px;
+	margin-bottom: 96px;
+	position: relative;
 `;
 
 Container.Title = styled.div``;
 
-Container.Description = styled.div`
+Container.Desc = styled.div`
 	margin-bottom: 32px;
-`;
-
-Container.Card = styled.div`
-	position: relative;
 `;
 
 export const ArrowsImg = styled.div`
 	max-width: 1200px;
 	position: absolute;
-	top: 37%;
+	top: 40%;
 
 	.left {
 		position: absolute;

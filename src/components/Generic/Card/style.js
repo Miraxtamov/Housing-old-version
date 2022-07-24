@@ -1,10 +1,27 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+	width: 100%;
+	max-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+`;
+
+export const ArrowImgCards = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+ArrowImgCards.Img = styled.img``;
+
 export const CardItem = styled.div`
+	position: relative;
+	width: 380px;
+	min-height: 250px;
 	border: 1px solid #e6e9ec;
 	border-radius: 3px;
 	padding: 1px;
-	position: relative;
 `;
 
 CardItem.Img = styled.img`
@@ -55,6 +72,8 @@ CardItem.ProfileImg = styled.img`
 	border-radius: 50%;
 	margin-left: auto;
 	margin-top: auto;
+	cursor: pointer;
+	object-fit: cover;
 `;
 
 CardItem.Title = styled.h1`
@@ -65,6 +84,7 @@ CardItem.Title = styled.h1`
 	margin-bottom: 4px;
 	margin-top: 70px;
 	padding-left: 20px;
+	padding-right: 20px;
 `;
 
 CardItem.Description = styled.div`
@@ -73,7 +93,9 @@ CardItem.Description = styled.div`
 	font-size: 14px;
 	line-height: 20px;
 	padding-left: 20px;
+	padding-right: 20px;
 	margin-bottom: 16px;
+	white-space: nowrap;
 `;
 
 export const CardIcons = styled.div`
@@ -82,6 +104,8 @@ export const CardIcons = styled.div`
 	align-items: center;
 	padding-right: 20px;
 	padding-left: 20px;
+	white-space: nowrap;
+	width: fit-content;
 `;
 
 CardIcons.CardIcon = styled.div`
@@ -90,9 +114,10 @@ CardIcons.CardIcon = styled.div`
 
 CardIcons.Img = styled.img`
 	margin-bottom: 5px;
+	color: var(--secondaryColor);
 
-	& path {
-		fill: #696969 !important;
+	path {
+		fill: var(--secondaryColor);
 	}
 `;
 
@@ -102,10 +127,11 @@ CardIcons.CardIconText = styled.div`
 	font-size: 14px;
 	line-height: 20px;
 	margin-bottom: 16px;
+	white-space: nowrap;
 `;
 
 CardItem.Hr = styled.hr`
-	background: #e6e9ec;
+	border: 1px solid #e6e9ec;
 	margin-bottom: 8px;
 `;
 
@@ -150,6 +176,10 @@ CardItem.ResizeImg = styled.img`
 CardItem.HeartImg = styled.img`
 	background-color: #f6f8f9;
 	border-radius: 60px;
-	padding: 11px 10px;
+	padding: 10px;
 	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
 `;

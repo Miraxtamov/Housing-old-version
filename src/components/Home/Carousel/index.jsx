@@ -47,7 +47,7 @@ const Carousel1 = () => {
 				/>
 			</ArrowsImg>
 			<Container>
-				<Carousel autoplay>
+				<Carousel autoplay ref={slider}>
 					<div>
 						<HomeTextsContainer.Wrapper>
 							<HomeImgContainer>
