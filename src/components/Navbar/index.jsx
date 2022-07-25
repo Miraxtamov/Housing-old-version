@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
-import FilterSearchButton from "../FilterSearchButton";
 import Button from "../Generic/Button";
 import {
 	Container,
@@ -43,7 +42,6 @@ const Navbar = () => {
 					</Navigation.NavLinkHref>
 				</Nav>
 			</Container>
-			<FilterSearchButton />
 			<Outlet />
 		</>
 	);

@@ -1,5 +1,5 @@
-import React, { memo } from 'react'
-import { Container } from './style';
+import React, { memo } from "react";
+import { Container } from "./style";
 
 export const ButtonGeneric = ({
 	children,

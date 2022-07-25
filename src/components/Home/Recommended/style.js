@@ -17,12 +17,17 @@ Container.Description = styled.div`
 
 Container.Card = styled.div`
 	position: relative;
+
+	.alice-carousel__prev-btn,
+	.alice-carousel__next-btn {
+		display: none;
+	}
 `;
 
 export const ArrowsImg = styled.div`
 	max-width: 1200px;
 	position: absolute;
-	top: 37%;
+	top: 40%;
 
 	.left {
 		position: absolute;

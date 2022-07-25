@@ -4,14 +4,7 @@ import { useQuery } from "react-query";
 import prev from "../../../assets/icons/prev.svg";
 import next from "../../../assets/icons/next.svg";
 import Card from "../../Generic/Card";
-import {
-	ArrowImg,
-	ArrowLeft,
-	ArrowRight,
-	ArrowsImg,
-	Container,
-	Wrapper,
-} from "./style";
+import { ArrowImg, ArrowsImg, Container, Wrapper } from "./style";
 
 const Recommended = () => {
 	const slider = useRef();
@@ -56,6 +49,8 @@ const Recommended = () => {
 						/>
 					</ArrowsImg>
 					<AliceCarousel
+						className="alice-carousel__prev-btn
+						alice-carousel__next-btn"
 						ref={slider}
 						responsive={{
 							0: {
@@ -69,7 +64,7 @@ const Recommended = () => {
 						items={dataItems}
 					>
 						{dataItems?.map((value) => {
-							return <Card info={value} />;
+							return <Card key={value.id} info={value} />;
 						})}
 					</AliceCarousel>
 				</Container.Card>

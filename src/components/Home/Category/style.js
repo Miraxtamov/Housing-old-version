@@ -7,6 +7,11 @@ export const Container = styled.div`
 	padding-left: 130px;
 	margin-bottom: 96px;
 	position: relative;
+
+	.alice-carousel__prev-btn,
+	.alice-carousel__next-btn {
+		display: none;
+	}
 `;
 
 Container.Title = styled.div``;
@@ -16,9 +21,9 @@ Container.Desc = styled.div`
 `;
 
 export const ArrowsImg = styled.div`
-	max-width: 1200px;
+	max-width: 1180px;
 	position: absolute;
-	top: 40%;
+	top: 50%;
 
 	.left {
 		position: absolute;

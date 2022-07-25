@@ -47,6 +47,8 @@ const Category = () => {
 				Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
 			</Container.Desc>
 			<AliceCarousel
+				className="alice-carousel__prev-btn
+						alice-carousel__next-btn"
 				ref={slider}
 				responsive={{
 					0: {
@@ -63,7 +65,6 @@ const Category = () => {
 					return <CategoryCard key={value.id} info={value} />;
 				})}
 			</AliceCarousel>
-			/>
 		</Container>
 	);
 };
