@@ -2,9 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 	width: 100%;
-	max-height: 100vh;
 	display: flex;
 	justify-content: space-between;
+
+	/* &:hover {
+		transform: scale(1.03);
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+			rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	} */
 `;
 
 export const ArrowImgCards = styled.div`
@@ -17,7 +22,7 @@ ArrowImgCards.Img = styled.img``;
 
 export const CardItem = styled.div`
 	position: relative;
-	width: 380px;
+	width: 100%;
 	min-height: 250px;
 	border: 1px solid #e6e9ec;
 	border-radius: 3px;
@@ -27,9 +32,8 @@ export const CardItem = styled.div`
 CardItem.Img = styled.img`
 	width: 100%;
 	height: 220px;
-	position: relative;
-	margin-bottom: -50px;
-	z-index: 0;
+	min-height: 220px;
+	max-height: 220px;
 `;
 
 CardItem.SaleProfileImg = styled.div`
@@ -81,10 +85,12 @@ CardItem.Title = styled.h1`
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 24px;
-	margin-bottom: 4px;
-	margin-top: 70px;
-	padding-left: 20px;
-	padding-right: 20px;
+	margin-top: 24px;
+	width: 90%;
+	margin: 24px auto 4px auto;
+	white-space: nowrap; 
+	cursor: pointer;
+	overflow: hidden;
 `;
 
 CardItem.Description = styled.div`
@@ -92,33 +98,34 @@ CardItem.Description = styled.div`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-bottom: 16px;
+	width: 90%;
+	margin: auto;
 	white-space: nowrap;
+	overflow: hidden;
 `;
 
 export const CardIcons = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-right: 20px;
-	padding-left: 20px;
+	text-align: center;
+	width: 90%;
+	margin: 16px 20px;
 	white-space: nowrap;
-	width: fit-content;
 `;
 
 CardIcons.CardIcon = styled.div`
 	text-align: center;
+	padding-left: 15px;
+
+	&:first-of-type {
+		padding-left: 0;
+	}
 `;
 
 CardIcons.Img = styled.img`
 	margin-bottom: 5px;
 	color: var(--secondaryColor);
-
-	path {
-		fill: var(--secondaryColor);
-	}
 `;
 
 CardIcons.CardIconText = styled.div`
@@ -141,6 +148,7 @@ export const CardItemPriceLike = styled.div`
 	align-items: center;
 	padding-left: 20px;
 	padding-right: 20px;
+	margin-top: auto;
 	margin-bottom: 8px;
 `;
 
@@ -171,10 +179,14 @@ CardItem.ResizeLike = styled.div`
 CardItem.ResizeImg = styled.img`
 	margin-right: 20px;
 	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
 `;
 
 CardItem.HeartImg = styled.img`
-	background-color: #f6f8f9;
+	background-color: ${(props) => (props.bg ? "#cc5040" : "#f6f8f9")};
 	border-radius: 60px;
 	padding: 10px;
 	cursor: pointer;

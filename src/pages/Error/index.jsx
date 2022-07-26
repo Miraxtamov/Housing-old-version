@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "./style";
 import { Button, Result } from "antd";
+import { ButtonGeneric } from "../../components/Generic/Button";
 
 const ErrorPage = () => {
 	return (
@@ -9,11 +10,7 @@ const ErrorPage = () => {
 				status="404"
 				title="404"
 				subTitle="Sorry, the page you visited does not exist."
-				extra={
-					<Button type="primary">
-						Back Home
-					</Button>
-				}
+				extra={<ButtonGeneric type="primary">Back Home</ButtonGeneric>}
 			/>
 		</Container>
 	);

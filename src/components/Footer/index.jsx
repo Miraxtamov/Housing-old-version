@@ -126,10 +126,11 @@ const Footer = () => {
 					</FooterCopyright.Logo>
 					<FooterCopyright.TextArrowLink>
 						<FooterCopyright.Text>
-							Copyright © 2021 CreativeLayers. All Right Reserved.
+							Copyright © {new Date().getFullYear()} CreativeLayers. All Right
+							Reserved.
 						</FooterCopyright.Text>
 						<FooterCopyright.ArrowLink href="#">
-							<FooterCopyright.ArrowImg src={downArrowIcon}/>
+							<FooterCopyright.ArrowImg src={downArrowIcon} />
 						</FooterCopyright.ArrowLink>
 					</FooterCopyright.TextArrowLink>
 				</FooterCopyright>

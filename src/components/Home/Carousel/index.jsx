@@ -20,15 +20,6 @@ import {
 } from "./style";
 import Button from "../../Generic/Button";
 
-const contentStyle = {
-	width: "100%",
-	height: "571px",
-	objectFit: "cover",
-	filter: "brightness(30%)",
-	backgroundSize: "cover",
-	backgroundRepeat: "no-repeat",
-};
-
 const Carousel1 = () => {
 	const slider = useRef();
 

@@ -12,7 +12,7 @@ const Category = () => {
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
-		"",
+		"category",
 		() => {
 			return fetch(
 				"https://houzing-app.herokuapp.com/api/v1/categories/list"
@@ -21,6 +21,7 @@ const Category = () => {
 		{
 			onSuccess: (res) => {
 				setDataItems(res?.data || []);
+				console.log(res?.data);
 			},
 			onError: (err) => {
 				console.log(err);
@@ -62,7 +63,7 @@ const Category = () => {
 				items={dataItems}
 			>
 				{dataItems?.map((value) => {
-					return <CategoryCard key={value.id} info={value} />;
+					return <CategoryCard key={value.id} title={value} />;
 				})}
 			</AliceCarousel>
 		</Container>

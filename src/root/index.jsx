@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ErrorPage from "../pages/Error";
 import { navbar } from "../utils/navbar";
+import ProductView from "../components/Properties/ProductView";
 
 const Root = () => {
 	return (
@@ -11,6 +12,7 @@ const Root = () => {
 			<Routes>
 				<Route element={<Navbar />}>
 					<Route path="/" element={<Navigate to={"/home"} />} />
+					<Route path="/properties:id" element={<ProductView />} />
 					{navbar?.map((value) => {
 						return (
 							<Route key={value.id} path={value.path} element={value.element} />

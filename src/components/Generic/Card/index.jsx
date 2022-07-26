@@ -1,5 +1,5 @@
 import React from "react";
-import cardHouse from "../../../assets/imgs/house1.png";
+import { useNavigate } from "react-router-dom";
 import cardProfile from "../../../assets/imgs/cardProfile.png";
 import bed from "../../../assets/icons/bed.svg";
 import bath from "../../../assets/icons/bath.svg";
@@ -7,17 +7,11 @@ import garage from "../../../assets/icons/garage.svg";
 import ruler from "../../../assets/icons/ruler.svg";
 import resize from "../../../assets/icons/resize.svg";
 import heart from "../../../assets/icons/heart.svg";
-import prev from "../../../assets/icons/prev.svg";
-import next from "../../../assets/icons/next.svg";
-import {
-	ArrowImgCards,
-	CardIcons,
-	CardItem,
-	CardItemPriceLike,
-	Wrapper,
-} from "./style";
+import { CardIcons, CardItem, CardItemPriceLike, Wrapper } from "./style";
 
 const Card = ({ info }) => {
+	const navigate = useNavigate();
+
 	return (
 		<Wrapper>
 			<CardItem>
@@ -29,16 +23,17 @@ const Card = ({ info }) => {
 					</CardItem.Sales>
 					<CardItem.ProfileImg src={cardProfile} />
 				</CardItem.SaleProfileImg>
-				<CardItem.Title>{info?.name || "Description"}</CardItem.Title>
+				<CardItem.Title onClick={() => navigate(`/properties:${info?.id}`)}>
+					{info?.address || "Title"}
+				</CardItem.Title>
 				<CardItem.Description>
-					{info?.name || "Name"},{info?.address || "Address"},
-					{info?.city || "City"},{info?.country || "Country"},
+					{info?.description || "Description"}
 				</CardItem.Description>
 				<CardIcons>
 					<CardIcons.CardIcon>
 						<CardIcons.Img src={bed} />
 						<CardIcons.CardIconText>
-							{info?.houseDetails?.area || 0} Beds
+							{info?.houseDetails?.beds || 0} Beds
 						</CardIcons.CardIconText>
 					</CardIcons.CardIcon>
 					<CardIcons.CardIcon>
@@ -56,7 +51,7 @@ const Card = ({ info }) => {
 					<CardIcons.CardIcon>
 						<CardIcons.Img src={ruler} />
 						<CardIcons.CardIconText>
-							{info?.houseDetails?.room || 0} Room
+							{info?.houseDetails?.area || 0} Sq Ft
 						</CardIcons.CardIconText>
 					</CardIcons.CardIcon>
 				</CardIcons>

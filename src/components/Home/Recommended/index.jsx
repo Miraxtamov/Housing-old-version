@@ -12,7 +12,7 @@ const Recommended = () => {
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
-		"",
+		"recommended",
 		() => {
 			return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then(
 				(res) => res.json()
