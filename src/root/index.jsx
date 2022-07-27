@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ErrorPage from "../pages/Error";
 import { navbar } from "../utils/navbar";
-import ProductView from "../components/Properties/ProductView";
+import ProductView from "../components/ProductView";
 
 const Root = () => {
 	return (
