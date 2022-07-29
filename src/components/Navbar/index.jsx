@@ -37,7 +37,7 @@ const Navbar = () => {
 							})}
 						</Navigation.NavList>
 					</Navigation>
-					<Navigation.NavLinkHref to={"/login"}>
+					<Navigation.NavLinkHref to={"/signin"}>
 						<Button width={"120px"}>Login</Button>
 					</Navigation.NavLinkHref>
 				</Nav>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import Main from "./Main";
+import Main from "./ProductMain";
 import PhotoBox from "./PhotoBox";
 import { Container } from "./style";
 
@@ -12,9 +12,13 @@ export const ProductView = () => {
 	useQuery(
 		"propertiesProduct",
 		() => {
-			return fetch(
-				`https://houzing-app.herokuapp.com/api/v1/houses/${params.id}`
-			).then((res) => res.json());
+			return (
+				fetch(`https://houzing-app.herokuapp.com/api/v1/houses/${params.id}`),
+				{
+					method: "GET",
+					
+				}.then((res) => res.json())
+			);
 		},
 		{
 			onSuccess: (res) => {
