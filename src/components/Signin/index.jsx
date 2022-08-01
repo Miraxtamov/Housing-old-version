@@ -19,12 +19,19 @@ const SignIn = () => {
 					"Content-type": "application/json",
 				},
 				body: JSON.stringify({
-					email: value.email,
-					password: value.password,
+					email: value?.email,
+					password: value?.password,
 				}),
 			})
 				.then((res) => res.json())
-				.then((res) => (res ? navigate("/home") : {}))
+				.then((res) =>
+					res
+						? setTimeout(() => {
+								localStorage.setItem("token", res?.authenticationToken);
+								navigate("/home");
+						  }, 1500)
+						: null
+				)
 				.catch(() => {
 					setHasError(true);
 				});
@@ -33,21 +40,27 @@ const SignIn = () => {
 			email: Yup.string()
 				.email("You have entered an invalid email address!")
 				.required("Fill in the Blank fields"),
-			password: Yup.string().min(8).required("Fill in the Blank fields"),
+			password: Yup.string()
+				.min(8) // Please create a stronger password {matches or pattern}
+				.required("Fill in the Blank fields"),
 		}),
 	});
+
+	console.log(formik);
 
 	const navigate = useNavigate();
 
 	return (
 		<Container>
 			<Wrapper>
-				<Form onSubmit={formik.handleSubmit}>
+				<Form autoComplete="on" onSubmit={formik.handleSubmit}>
 					{hasError ? (
 						<Alert
 							style={{ marginBottom: "10px" }}
-							message="Login or Password is wrong"
+							message="Email or Password is wrong"
 							type="error"
+							closable
+							showIcon
 						/>
 					) : (
 						<></>
@@ -61,8 +74,13 @@ const SignIn = () => {
 						placeholder="Email"
 						value={formik.values.email}
 						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
 					/>
-					<Form.Error>{formik.errors.email}</Form.Error>
+					<div style={{ marginBottom: "44px" }}>
+						{formik.errors.email && formik.touched.email ? (
+							<Form.Error>{formik.errors.email}</Form.Error>
+						) : null}
+					</div>
 					<Form.Input
 						psw
 						name="password"
@@ -71,8 +89,13 @@ const SignIn = () => {
 						placeholder="Password"
 						value={formik.values.password}
 						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
 					/>
-					<Form.Error>{formik.errors.password}</Form.Error>
+					<div style={{ marginBottom: "16px" }}>
+						{formik.errors.password && formik.touched.password ? (
+							<Form.Error>{formik.errors.password}</Form.Error>
+						) : null}
+					</div>
 					<CheckboxRememberForgot>
 						<div style={{ display: "flex", alignItems: "center" }}>
 							<CheckboxRememberForgot.Checkbox

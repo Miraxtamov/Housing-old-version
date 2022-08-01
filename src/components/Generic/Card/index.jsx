@@ -23,7 +23,7 @@ const Card = ({ info }) => {
 					</CardItem.Sales>
 					<CardItem.ProfileImg src={cardProfile} />
 				</CardItem.SaleProfileImg>
-				<CardItem.Title onClick={() => navigate(`/properties:${info?.id}`)}>
+				<CardItem.Title onClick={() => navigate(`/properties${info?.id}`)}>
 					{info?.address || "Title"}
 				</CardItem.Title>
 				<CardItem.Description>

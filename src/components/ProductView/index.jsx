@@ -16,7 +16,9 @@ export const ProductView = () => {
 				fetch(`https://houzing-app.herokuapp.com/api/v1/houses/${params.id}`),
 				{
 					method: "GET",
-					
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
 				}.then((res) => res.json())
 			);
 		},

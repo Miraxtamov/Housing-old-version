@@ -35,7 +35,7 @@ Form.Title = styled.div`
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 28px;
-	margin-bottom: 44px;
+	margin-bottom: 68px;
 `;
 
 Form.Input = styled.input`
@@ -51,7 +51,6 @@ Form.Input = styled.input`
 	padding: 4px 4px 4px 0;
 	color: var(--primaryColor);
 	width: 100%;
-	margin-bottom: 8px;
 	font-size: 14px;
 
 	&:focus {
@@ -132,5 +131,4 @@ Form.Error = styled.div`
 	color: red;
 	font-size: 14px;
 	line-height: 20px;
-	margin-bottom: 44px;
 `;
