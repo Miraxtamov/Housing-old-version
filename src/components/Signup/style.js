@@ -35,7 +35,7 @@ Form.Title = styled.div`
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 28px;
-	margin-bottom: 48px;
+	margin-bottom: 44px;
 `;
 
 Form.Input = styled.input`
@@ -56,37 +56,6 @@ Form.Input = styled.input`
 
 	&:focus {
 		border-bottom: 2px solid var(--activeColor);
-	}
-`;
-
-export const CheckboxRememberForgot = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-self: flex-start;
-	margin-bottom: 28px;
-`;
-
-CheckboxRememberForgot.Checkbox = styled.input`
-	width: 18px;
-	height: 18px;
-	border: 2px solid #e6e9ec;
-`;
-
-CheckboxRememberForgot.Label = styled.label`
-	margin-left: 11px;
-	color: var(--secondaryColor);
-	font-size: 14px;
-	line-height: 20px;
-`;
-
-Form.ForgotLink = styled.a`
-	color: var(--activeColor);
-	text-decoration: underline;
-	font-size: 16px;
-	line-height: 24px;
-
-	&:hover {
-		text-decoration: underline;
 	}
 `;
 
@@ -113,18 +82,6 @@ Form.Button = styled.button`
 	&:active {
 		transform: scale(0.98);
 		opacity: 0.7;
-	}
-`;
-
-Form.Register = styled.div`
-	cursor: pointer;
-	margin-top: 20px;
-	text-align: center;
-	color: var(--activeColor);
-	font-weight: 500;
-
-	&:hover {
-		text-decoration: underline;
 	}
 `;
 

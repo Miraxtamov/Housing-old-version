@@ -36,7 +36,7 @@ const SignIn = () => {
 					setHasError(true);
 				});
 		},
-		validationSchema: Yup.object({
+		validationSchema: Yup.object().shape({
 			email: Yup.string()
 				.email("You have entered an invalid email address!")
 				.required("Fill in the Blank fields"),
@@ -109,7 +109,7 @@ const SignIn = () => {
 						<Form.ForgotLink href="#">Forgot</Form.ForgotLink>
 					</CheckboxRememberForgot>
 					<Form.Button type="submit">Login</Form.Button>
-					<Form.Register onClick={() => navigate("/register")}>
+					<Form.Register onClick={() => navigate("/signup")}>
 						Did you Register?
 					</Form.Register>
 				</Form>

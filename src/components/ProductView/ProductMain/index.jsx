@@ -10,7 +10,7 @@ import { Container, ProductViewLeft, Wrapper } from "./style";
 import WriteReview from "./WriteReview";
 
 const Main = ({ house }) => {
-	console.log(house);
+	console.log(house, "House");
 	return (
 		<Container>
 			<Wrapper>

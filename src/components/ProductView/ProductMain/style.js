@@ -21,11 +21,11 @@ export const Wrapper = styled.div`
 	padding-left: 130px;
 	padding-right: 130px;
 	width: 100%;
-	/* gap: 20px; */
+	gap: 20px;
 `;
 
 export const ProductViewLeft = styled.div`
-	width: 100%;
+	width: 72.5%;
 `;
 
 ProductViewLeft.Wrapper = styled.div`

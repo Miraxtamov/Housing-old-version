@@ -35,6 +35,7 @@ export const PhoneNumber = styled.div`
 `;
 
 export const Input = styled.input`
+	color: var(--primaryColor);
 	padding-top: 4px;
 	padding-bottom: 4px;
 	width: 100%;
@@ -42,6 +43,14 @@ export const Input = styled.input`
 	outline: none;
 	border-bottom: 2px solid #e6e9ec;
 	margin-top: 20px;
+	margin-bottom: ${(props) => (props.mb ? "24px" : {})};
+`;
+
+export const MessageLabel = styled.label`
+	color: var(--primaryColor);
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
 `;
 
 export const Message = styled.textarea`
@@ -52,4 +61,23 @@ export const Message = styled.textarea`
 	outline: none;
 	border-bottom: 2px solid #e6e9ec;
 	resize: none;
+	color: var(--primaryColor);
+`;
+
+export const CheckboxContainer = styled.div`
+	display: flex;
+	align-items: baseline;
+	margin-top: 24px;
+`;
+
+CheckboxContainer.Input = styled.input`
+	border: 2px solid #e6e9ec;
+`;
+
+CheckboxContainer.Label = styled.label`
+	color: var(--secondaryColor);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	margin-left: 8px;
 `;

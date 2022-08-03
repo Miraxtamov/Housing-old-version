@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+	width: 1348px;
+	margin: auto;
+`;
 
 export const Container = styled.div`
 	max-width: 1440px;

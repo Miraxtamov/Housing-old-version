@@ -12,6 +12,10 @@ import { CardIcons, CardItem, CardItemPriceLike, Wrapper } from "./style";
 const Card = ({ info }) => {
 	const navigate = useNavigate();
 
+	const onClick = (id) => {
+		navigate(`/properties/${info?.id}`);
+	};
+
 	return (
 		<Wrapper>
 			<CardItem>
@@ -23,7 +27,7 @@ const Card = ({ info }) => {
 					</CardItem.Sales>
 					<CardItem.ProfileImg src={cardProfile} />
 				</CardItem.SaleProfileImg>
-				<CardItem.Title onClick={() => navigate(`/properties${info?.id}`)}>
+				<CardItem.Title onClick={onClick}>
 					{info?.address || "Title"}
 				</CardItem.Title>
 				<CardItem.Description>

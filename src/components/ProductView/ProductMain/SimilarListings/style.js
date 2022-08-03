@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+	width: 1100px;
+`;
 
 export const Container = styled.div`
 	max-width: 1440px;
@@ -18,8 +20,8 @@ Container.Description = styled.div`
 
 Container.Card = styled.div`
 	position: relative;
-  display: flex;
-  gap: 20px;
+	display: flex;
+	gap: 20px;
 
 	.alice-carousel__prev-btn,
 	.alice-carousel__next-btn {

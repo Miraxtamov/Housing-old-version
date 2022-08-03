@@ -4,7 +4,7 @@ import next from "../../../assets/icons/next.svg";
 import AliceCarousel from "react-alice-carousel";
 import { useQuery } from "react-query";
 import CategoryCard from "./CategoryCard";
-import { ArrowImg, ArrowsImg, Container } from "./style";
+import { ArrowImg, ArrowsImg, Container, Wrapper } from "./style";
 
 const Category = () => {
 	const slider = useRef();
@@ -30,43 +30,45 @@ const Category = () => {
 	);
 
 	return (
-		<Container>
-			<ArrowsImg>
-				<ArrowImg
-					className="left"
-					src={prev}
-					onClick={() => slider?.current?.slidePrev()}
-				/>
-				<ArrowImg
-					className="right"
-					src={next}
-					onClick={() => slider?.current?.slideNext()}
-				/>
-			</ArrowsImg>
-			<Container.Title className="title">Category</Container.Title>
-			<Container.Desc className="description">
-				Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
-			</Container.Desc>
-			<AliceCarousel
-				className="alice-carousel__prev-btn
+		<Wrapper>
+			<Container>
+				<ArrowsImg>
+					<ArrowImg
+						className="left"
+						src={prev}
+						onClick={() => slider?.current?.slidePrev()}
+					/>
+					<ArrowImg
+						className="right"
+						src={next}
+						onClick={() => slider?.current?.slideNext()}
+					/>
+				</ArrowsImg>
+				<Container.Title className="title">Category</Container.Title>
+				<Container.Desc className="description">
+					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+				</Container.Desc>
+				<AliceCarousel
+					className="alice-carousel__prev-btn
 						alice-carousel__next-btn"
-				ref={slider}
-				responsive={{
-					0: {
-						items: 1,
-					},
-					1024: {
-						items: 4,
-					},
-				}}
-				mouseTracking
-				items={dataItems}
-			>
-				{dataItems?.map((value) => {
-					return <CategoryCard key={value.id} title={value} />;
-				})}
-			</AliceCarousel>
-		</Container>
+					ref={slider}
+					responsive={{
+						0: {
+							items: 1,
+						},
+						1024: {
+							items: 4,
+						},
+					}}
+					mouseTracking
+					items={dataItems}
+				>
+					{dataItems?.map((value) => {
+						return <CategoryCard key={value.id} title={value} />;
+					})}
+				</AliceCarousel>
+			</Container>
+		</Wrapper>
 	);
 };
 

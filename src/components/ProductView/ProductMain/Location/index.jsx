@@ -60,7 +60,7 @@ const Location = ({ house }) => {
 			>
 				<GoogleMap
 					onClick={onClick}
-					mapContainerStyle={containerStyle} // Mani singlimga doim yasin o'qib ber
+					mapContainerStyle={containerStyle}
 					center={center}
 					zoom={13}
 				>
