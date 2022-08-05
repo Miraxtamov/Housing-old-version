@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import noPicture from "../../../assets/imgs/nopicture.jpg";
 import cardProfile from "../../../assets/imgs/cardProfile.png";
 import bed from "../../../assets/icons/bed.svg";
 import bath from "../../../assets/icons/bath.svg";
@@ -19,7 +20,7 @@ const Card = ({ info }) => {
 	return (
 		<Wrapper>
 			<CardItem>
-				<CardItem.Img src={info?.attachments[0]?.imgPath || "No img"} />
+				<CardItem.Img src={info?.attachments[0]?.imgPath || noPicture} />
 				<CardItem.SaleProfileImg>
 					<CardItem.Sales>
 						<CardItem.Featured>FEATURED</CardItem.Featured>

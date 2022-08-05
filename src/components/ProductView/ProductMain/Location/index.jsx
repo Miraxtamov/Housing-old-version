@@ -28,11 +28,11 @@ const Location = ({ house }) => {
 			<Row>
 				<Row.Item>
 					<Subtitle>Address:</Subtitle>
-					<Description>329 Queensberry Street</Description>
+					<Description>{house?.address}</Description>
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>City:</Subtitle>
-					<Description>Jersey City</Description>
+					<Description>{house?.city}</Description>
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>Area:</Subtitle>
@@ -46,11 +46,11 @@ const Location = ({ house }) => {
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>Zip:</Subtitle>
-					<Description>365448</Description>
+					<Description>{house?.zipCode}</Description>
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>Country:</Subtitle>
-					<Description>United States</Description>
+					<Description>{house?.country}</Description>
 				</Row.Item>
 			</Row>
 			{/* Google Map */}

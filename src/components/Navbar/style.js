@@ -70,3 +70,7 @@ Navigation.NavLinkHref = styled(NavLink)`
 		color: var(--activeColor);
 	}
 `;
+
+Navigation.UserLogin = styled.img`
+	cursor: pointer;
+`

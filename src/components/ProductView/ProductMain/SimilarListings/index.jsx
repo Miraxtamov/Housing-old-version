@@ -25,6 +25,8 @@ const Recommended = () => {
 			onError: (err) => {
 				console.log(err);
 			},
+			refetchOnWindowFocus: false,
+			keepPreviousData: true,
 		}
 	);
 

@@ -1,19 +1,19 @@
-import React from 'react'
-import { Container, SubDesc, SubTitle, Title, Wrapper } from './style'
+import React from "react";
+import { Container, SubDesc, SubTitle, Title, Wrapper } from "./style";
 
-const PropertyDetails = ({house}) => {
-  return (
+const PropertyDetails = ({ house }) => {
+	return (
 		<Container>
 			<Title>Property Details</Title>
 			<Wrapper>
 				<Wrapper.Col>
 					<Wrapper.Box>
 						<SubTitle>Property ID:</SubTitle>
-						<SubDesc>HZ27</SubDesc>
+						<SubDesc>{house?.id}</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Price:</SubTitle>
-						<SubDesc>$130.000</SubDesc>
+						<SubDesc>{house?.price}</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Property Size:</SubTitle>
@@ -21,25 +21,25 @@ const PropertyDetails = ({house}) => {
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Year Bulit:</SubTitle>
-						<SubDesc>2021-01-09</SubDesc>
+						<SubDesc>{house?.houseDetails?.yearBuilt}</SubDesc>
 					</Wrapper.Box>
 				</Wrapper.Col>
 				<Wrapper.Col>
 					<Wrapper.Box>
 						<SubTitle>Bedrooms:</SubTitle>
-						<SubDesc>8</SubDesc>
+						<SubDesc>{house?.houseDetails?.beds}</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Bathrooms:</SubTitle>
-						<SubDesc>6</SubDesc>
+						<SubDesc>{house?.houseDetails?.bath}</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Garage:</SubTitle>
-						<SubDesc>4</SubDesc>
+						<SubDesc>{house?.houseDetails?.garage}</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Garage size:</SubTitle>
-						<SubDesc>200 SqFt</SubDesc>
+						<SubDesc>{house?.houseDetails?.area}</SubDesc>
 					</Wrapper.Box>
 				</Wrapper.Col>
 				<Wrapper.Col>
@@ -55,6 +55,6 @@ const PropertyDetails = ({house}) => {
 			</Wrapper>
 		</Container>
 	);
-}
+};
 
-export default PropertyDetails
+export default PropertyDetails;

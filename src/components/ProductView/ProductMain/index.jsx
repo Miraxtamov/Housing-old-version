@@ -17,7 +17,7 @@ const Main = ({ house }) => {
 				<ProductViewLeft>
 					<ProductViewLeft.Wrapper>
 						<ProductViewLeft.Title>
-							Luxury Family Loft by Victoria Park {house?.address}
+							{house?.address || "Luxury Family Loft by Victoria Park"}
 						</ProductViewLeft.Title>
 						<ProductViewLeft.Wrapper>
 							<ProductViewLeft.Icons>
@@ -36,7 +36,7 @@ const Main = ({ house }) => {
 					</ProductViewLeft.Wrapper>
 					<ProductViewLeft.Wrapper>
 						<ProductViewLeft.Description>
-							Quincy St, Brooklyn, NY, USA
+							{house?.city} {house?.country} {house?.description}
 						</ProductViewLeft.Description>
 						<ProductViewLeft.Wrapper>
 							<ProductViewLeft.Sale>$2,800/mo</ProductViewLeft.Sale>
@@ -53,15 +53,15 @@ const Main = ({ house }) => {
 								</ProductViewLeft.Text>
 								<ProductViewLeft.Bath style={{ marginLeft: "24px" }} />
 								<ProductViewLeft.Text>
-									{house?.houseDetails?.bath || 0} Beds
+									{house?.houseDetails?.bath || 0} Bath
 								</ProductViewLeft.Text>
 								<ProductViewLeft.Garage style={{ marginLeft: "24px" }} />
 								<ProductViewLeft.Text>
-									{house?.houseDetails?.garage || 0} Beds
+									{house?.houseDetails?.garage || 0} Garage
 								</ProductViewLeft.Text>
 								<ProductViewLeft.Ruler style={{ marginLeft: "24px" }} />
 								<ProductViewLeft.Text>
-									{house?.houseDetails?.area || 0} Beds
+									{house?.houseDetails?.area || 0} Area
 								</ProductViewLeft.Text>
 								<ProductViewLeft.Calendar style={{ marginLeft: "24px" }} />
 								<ProductViewLeft.Text>

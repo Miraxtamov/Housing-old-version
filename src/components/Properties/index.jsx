@@ -10,7 +10,7 @@ import {
 	WrapperFlex,
 } from "./style";
 
-const Properties = ({info}) => {
+const Properties = ({ info }) => {
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
@@ -28,6 +28,8 @@ const Properties = ({info}) => {
 			onError: (err) => {
 				console.log(err);
 			},
+			refetchOnWindowFocus: false,
+			keepPreviousData: true,
 		}
 	);
 
@@ -41,7 +43,9 @@ const Properties = ({info}) => {
 			</PropertiesContainer.Description>
 			<CardResultSortBy>
 				<CardResultSortBy.Result>
-					<CardResultSortBy.SpanBold>{dataItems?.length}</CardResultSortBy.SpanBold>
+					<CardResultSortBy.SpanBold>
+						{dataItems?.length}
+					</CardResultSortBy.SpanBold>
 					results
 				</CardResultSortBy.Result>
 				<CardResultSortByButton>

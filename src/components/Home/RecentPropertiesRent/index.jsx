@@ -1,18 +1,18 @@
-import React, { useState, useRef } from "react";
-import AliceCarousel from "react-alice-carousel";
+import React, { useRef, useState } from "react";
 import { useQuery } from "react-query";
+import AliceCarousel from "react-alice-carousel";
 import prev from "../../../assets/icons/prev.svg";
 import next from "../../../assets/icons/next.svg";
 import Card from "../../Generic/Card";
 import { ArrowImg, ArrowsImg, Container, Wrapper } from "./style";
 
-const Recommended = () => {
+const RecentPropertiesRent = () => {
 	const slider = useRef();
 
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
-		"recommended",
+		"recentRent",
 		() => {
 			return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then(
 				(res) => res.json()
@@ -33,10 +33,12 @@ const Recommended = () => {
 	return (
 		<Wrapper>
 			<Container>
-				<Container.Title className="title">Recommended</Container.Title>
-				<Container.Description className="description">
-					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
-				</Container.Description>
+				<Container.Title className="title">
+					Recent Properties for Rent
+				</Container.Title>
+				<Container.Desc className="description">
+					Recent Properties for Rent
+				</Container.Desc>
 				<Container.Card>
 					<ArrowsImg>
 						<ArrowImg
@@ -75,4 +77,4 @@ const Recommended = () => {
 	);
 };
 
-export default Recommended;
+export default RecentPropertiesRent;

@@ -29,6 +29,7 @@ const SignIn = () => {
 						? setTimeout(() => {
 								localStorage.setItem("token", res?.authenticationToken);
 								navigate("/home");
+								// window.location.reload();
 						  }, 1500)
 						: null
 				)

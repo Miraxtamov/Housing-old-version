@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 
-	/* &:hover {
+	&:hover {
 		transform: scale(1.03);
 		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
 			rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-	} */
+	}
 `;
 
 export const ArrowImgCards = styled.div`

@@ -26,6 +26,8 @@ const Category = () => {
 			onError: (err) => {
 				console.log(err);
 			},
+			refetchOnWindowFocus: false,
+			keepPreviousData: true,
 		}
 	);
 
