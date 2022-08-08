@@ -7,6 +7,9 @@ import { navbar } from "../utils/navbar";
 import ProductView from "../components/ProductView";
 import SignIn from "../components/Signin";
 import SignUp from "../components/Signup";
+import Generic from "../pages/Generic";
+import Favourite from "../components/Favourite";
+import MyProperties from "../components/MyProperties";
 
 const Root = () => {
 	return (
@@ -21,6 +24,9 @@ const Root = () => {
 					/>
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
+					<Route path="/profile" element={<Generic />} />
+					<Route path="/myproperties" element={<MyProperties />} />
+					<Route path="/favourites" element={<Favourite />} />
 					{navbar?.map((value) => {
 						return (
 							<Route key={value.id} path={value.path} element={value.element} />

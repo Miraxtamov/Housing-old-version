@@ -48,7 +48,7 @@ export const FooterSocialMedia = styled.div`
 `;
 
 FooterSocialMedia.Link = styled.a`
-	margin-left: ${(props) => (props.facebook ? "0" : "37px")};
+	margin-left: ${(props) => (props.facebook ? "0" : "13px")};
 	font-size: 14px;
 	line-height: 16px;
 	color: var(--defaultColor);

@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Popover } from "antd";
 import { Outlet } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
@@ -13,8 +15,21 @@ import {
 	Nav,
 	Navigation,
 } from "./style";
+import { user } from "../../utils/user";
 
 const Navbar = () => {
+	const navigate = useNavigate();
+
+	const content = () => {
+		return user.map((value) => (
+			<Navigation.UserNavbar key={value.id}>
+				<Navigation.UserLi onClick={() => navigate(value?.path)}>
+					{value?.title}
+				</Navigation.UserLi>
+			</Navigation.UserNavbar>
+		));
+	};
+
 	return (
 		<>
 			<Container>
@@ -39,7 +54,11 @@ const Navbar = () => {
 						</Navigation.NavList>
 					</Navigation>
 					{localStorage.getItem("token") ? (
-						<Navigation.UserLogin src={userLogin} alt="User login" />
+						<Popover trigger="click" placement="bottomRight" content={content}>
+							<div>
+								<Navigation.UserLogin src={userLogin} alt="User login" />
+							</div>
+						</Popover>
 					) : (
 						<Navigation.NavLinkHref to={"/signin"}>
 							<Button width={"120px"}>Login</Button>

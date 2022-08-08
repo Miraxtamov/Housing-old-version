@@ -73,4 +73,38 @@ Navigation.NavLinkHref = styled(NavLink)`
 
 Navigation.UserLogin = styled.img`
 	cursor: pointer;
-`
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	&:active {
+		transform: scale(0.97);
+	}
+`;
+
+Navigation.UserNavbar = styled.div`
+	width: 177px;
+	background-color: var(--defaultColor);
+`;
+
+Navigation.UserLi = styled.div`
+	color: #000000;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+	padding: 8px;
+	margin-bottom: 4px;
+	border-radius: 5px;
+
+	&:hover,
+	&.active {
+		background-color: var(--activeColor);
+		color: var(--defaultColor);
+	}
+
+	&:active {
+		transform: scale(0.99);
+	}
+`;

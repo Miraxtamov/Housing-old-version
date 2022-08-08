@@ -1,11 +1,11 @@
 import React from "react";
 import { useFormik } from "formik";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Container, Form, Wrapper } from "./style";
 
 const SignUp = () => {
-  const navigate = useNavigate()
+	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: {
 			login: "",
@@ -17,7 +17,7 @@ const SignUp = () => {
 			confirmPassword: "",
 		},
 		onSubmit: (value) => {
-			fetch("https://houzing-app.herokuapp.com/api/public/auth/login", {
+			fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",
@@ -33,7 +33,14 @@ const SignUp = () => {
 				}),
 			})
 				.then((res) => res.json())
-				.then((res) => res)
+				.then((res) => {
+					if (res?.status === 200) {
+						navigate("/home");
+					} else {
+						alert("Invalid user")
+					}
+					console.log(res?.status);
+				})
 				.catch((err) => {
 					console.log(err);
 				});

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Alert } from "antd";
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { CheckboxRememberForgot, Container, Form, Wrapper } from "./style";
 
@@ -29,7 +29,6 @@ const SignIn = () => {
 						? setTimeout(() => {
 								localStorage.setItem("token", res?.authenticationToken);
 								navigate("/home");
-								// window.location.reload();
 						  }, 1500)
 						: null
 				)
@@ -41,28 +40,23 @@ const SignIn = () => {
 			email: Yup.string()
 				.email("You have entered an invalid email address!")
 				.required("Fill in the Blank fields"),
-			password: Yup.string()
-				.min(8) // Please create a stronger password {matches or pattern}
-				.required("Fill in the Blank fields"),
+			password: Yup.string().min(8).required("Fill in the Blank fields"),
 		}),
 	});
 
 	console.log(formik);
 
 	const navigate = useNavigate();
+	const notify = () => toast.error("Email or Password is wrong!");
 
 	return (
 		<Container>
 			<Wrapper>
 				<Form autoComplete="on" onSubmit={formik.handleSubmit}>
 					{hasError ? (
-						<Alert
-							style={{ marginBottom: "10px" }}
-							message="Email or Password is wrong"
-							type="error"
-							closable
-							showIcon
-						/>
+						<>
+							<ToastContainer theme="colored" position="bottom-right" />
+						</>
 					) : (
 						<></>
 					)}
@@ -109,7 +103,9 @@ const SignIn = () => {
 						</div>
 						<Form.ForgotLink href="#">Forgot</Form.ForgotLink>
 					</CheckboxRememberForgot>
-					<Form.Button type="submit">Login</Form.Button>
+					<Form.Button onClick={notify} type="submit">
+						Login
+					</Form.Button>
 					<Form.Register onClick={() => navigate("/signup")}>
 						Did you Register?
 					</Form.Register>

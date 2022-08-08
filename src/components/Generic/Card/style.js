@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as heart } from "../../../assets/icons/heart.svg";
 
 export const Wrapper = styled.div`
 	width: 100%;
@@ -6,19 +7,10 @@ export const Wrapper = styled.div`
 	justify-content: space-between;
 
 	&:hover {
-		transform: scale(1.03);
 		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
 			rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 	}
 `;
-
-export const ArrowImgCards = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-`;
-
-ArrowImgCards.Img = styled.img``;
 
 export const CardItem = styled.div`
 	position: relative;
@@ -58,11 +50,21 @@ CardItem.Sales = styled.div`
 CardItem.Featured = styled.div`
 	background-color: var(--activeColor);
 	border-radius: 3px;
-	padding: 5px 10px;
+	padding: 5px 12px;
+	color: var(--defaultColor);
+	font-weight: 600;
+	font-size: 10px;
+	line-height: 13px;
 `;
 
 CardItem.Sale = styled(CardItem.Featured)`
 	background-color: var(--primaryColor);
+	border-radius: 3px;
+	padding: 5px 12px;
+	color: var(--defaultColor);
+	font-weight: 600;
+	font-size: 10px;
+	line-height: 13px;
 `;
 
 CardItem.ProfileImg = styled.img`
@@ -88,7 +90,7 @@ CardItem.Title = styled.h1`
 	margin-top: 24px;
 	width: 90%;
 	margin: 24px auto 4px auto;
-	white-space: nowrap; 
+	white-space: nowrap;
 	cursor: pointer;
 	overflow: hidden;
 `;
@@ -185,13 +187,15 @@ CardItem.ResizeImg = styled.img`
 	}
 `;
 
-CardItem.HeartImg = styled.img`
-	background-color: ${(props) => (props.bg ? "#cc5040" : "#f6f8f9")};
+CardItem.HeartImg = styled(heart)`
 	border-radius: 60px;
-	padding: 10px;
 	cursor: pointer;
 
 	&:active {
 		transform: scale(0.97);
+	}
+
+	& path {
+		fill: ${(props) => props.clr};
 	}
 `;

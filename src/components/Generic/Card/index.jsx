@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
 import noPicture from "../../../assets/imgs/nopicture.jpg";
 import cardProfile from "../../../assets/imgs/cardProfile.png";
 import bed from "../../../assets/icons/bed.svg";
@@ -12,6 +13,34 @@ import { CardIcons, CardItem, CardItemPriceLike, Wrapper } from "./style";
 
 const Card = ({ info }) => {
 	const navigate = useNavigate();
+	const [love, setLove] = useState(false);
+	const [id, setId] = useState();
+
+	useQuery("addFavourite", () => {
+		fetch(
+			`https://houzing-app.herokuapp.com/api/v1/houses/addFavourite/${
+				id ? id : ""
+			}?favourite=true`,
+			{
+				method: "PUT",
+				headers: {
+					"Content-type": "application/json",
+					Authorization: `Bearer ${localStorage.getItem("token")}`,
+				},
+				body: JSON.stringify({
+					id: "",
+				}),
+			}
+				.then((res) => res.json())
+				.then((res) => res),
+			{
+				onSuccess: (res) => alert("sa"),
+				onError: (err) => console.log(err),
+			}
+		);
+	});
+
+	const addFavourite = () => {};
 
 	const onClick = (id) => {
 		navigate(`/properties/${info?.id}`);
@@ -20,7 +49,11 @@ const Card = ({ info }) => {
 	return (
 		<Wrapper>
 			<CardItem>
-				<CardItem.Img src={info?.attachments[0]?.imgPath || noPicture} />
+				<CardItem.Img
+					style={{ cursor: "pointer" }}
+					onClick={onClick}
+					src={info?.attachments[0]?.imgPath || noPicture}
+				/>
 				<CardItem.SaleProfileImg>
 					<CardItem.Sales>
 						<CardItem.Featured>FEATURED</CardItem.Featured>
@@ -67,8 +100,11 @@ const Card = ({ info }) => {
 						<CardItem.Price>{info?.salePrice || 0} / month</CardItem.Price>
 					</CardItem.Prices>
 					<CardItem.ResizeLike>
-						<CardItem.ResizeImg src={resize} />
-						<CardItem.HeartImg src={heart} />
+						<CardItem.ResizeImg onClick={onClick} src={resize} />
+						<CardItem.HeartImg
+							clr={() => love && "#CC5040"}
+							onClick={() => setLove(!love)}
+						/>
 					</CardItem.ResizeLike>
 				</CardItemPriceLike>
 			</CardItem>

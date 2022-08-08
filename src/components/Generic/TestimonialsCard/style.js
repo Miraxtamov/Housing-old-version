@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
 `;
 
 export const CardContainer = styled.div`
+	width: 380px;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	margin-left: 20px;
 `;
 
 CardContainer.AboutOpinion = styled.div`
@@ -45,5 +45,5 @@ CardContainer.Jobs = styled.div`
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
-  margin-bottom: 48px;
+	margin-bottom: 48px;
 `;

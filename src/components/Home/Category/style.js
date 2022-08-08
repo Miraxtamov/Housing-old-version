@@ -17,6 +17,11 @@ export const Container = styled.div`
 	.alice-carousel__next-btn {
 		display: none;
 	}
+
+	.alice-carousel__stage {
+		display: flex;
+		gap: 20px;
+	}
 `;
 
 Container.Title = styled.div``;

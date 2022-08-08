@@ -29,6 +29,11 @@ Container.Card = styled.div`
 	.alice-carousel__dots {
 		display: none;
 	}
+
+    .alice-carousel__stage {
+      display: flex;
+      gap: 30px;
+    }
 `;
 
 export const ArrowsImg = styled.div`

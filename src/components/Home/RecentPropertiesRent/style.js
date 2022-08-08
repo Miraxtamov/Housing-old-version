@@ -26,6 +26,10 @@ Container.Card = styled.div`
 	.alice-carousel__next-btn {
 		display: none;
 	}
+
+	.alice-carousel__stage {
+		display: flex;
+		gap: 20px;
 `;
 
 export const ArrowsImg = styled.div`

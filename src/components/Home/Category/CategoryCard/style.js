@@ -8,21 +8,24 @@ export const CategoryCard1 = styled.div`
 	height: 350px;
 	border-radius: 3px;
 	overflow: hidden;
+	text-align: center;
 	box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
 		0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
 `;
 
 CategoryCard1.SvgTitle = styled.div`
 	position: absolute;
-	top: 145px;
-	left: 110px;
+	top: 50%;
+	left: 50%;
 	text-align: center;
+	transform: translate(-50%, -50%);
 `;
 
 CategoryCard1.Img = styled.img`
 	width: 100%;
 	cursor: pointer;
 	object-fit: cover;
+
 	&:hover {
 		transform: scale(1.19);
 	}
