@@ -26,7 +26,7 @@ const Properties = ({ info }) => {
 		{
 			onSuccess: (res) => {
 				console.log(res?.data);
-				setDataItems(res?.data || "No Data");
+				setDataItems(res?.data);
 			},
 			onError: (err) => {
 				console.log(err);
@@ -41,7 +41,7 @@ const Properties = ({ info }) => {
 			<FilterSearchButton />
 			<PropertiesContainer>
 				<PropertiesContainer.Title className="title">
-					{dataItems[0]?.category?.name || "Properties"}
+					Properties
 				</PropertiesContainer.Title>
 				<PropertiesContainer.Description className="description">
 					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
@@ -49,7 +49,7 @@ const Properties = ({ info }) => {
 				<CardResultSortBy>
 					<CardResultSortBy.Result>
 						<CardResultSortBy.SpanBold>
-							{dataItems?.length}
+							{dataItems?.length || 0}
 						</CardResultSortBy.SpanBold>
 						results
 					</CardResultSortBy.Result>
