@@ -12,7 +12,7 @@ const Category = () => {
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
-		"category",
+		["category"],
 		() => {
 			return fetch(
 				"https://houzing-app.herokuapp.com/api/v1/categories/list"

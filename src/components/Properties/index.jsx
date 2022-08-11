@@ -41,7 +41,7 @@ const Properties = ({ info }) => {
 			<FilterSearchButton />
 			<PropertiesContainer>
 				<PropertiesContainer.Title className="title">
-					Properties
+					{dataItems?.category?.name || "Properties"}
 				</PropertiesContainer.Title>
 				<PropertiesContainer.Description className="description">
 					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.

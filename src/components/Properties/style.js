@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const PropertiesContainer = styled.div`
+	width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
+	padding-right: 90px;
+	padding-left: 90px;
 
 	@media (max-width: 768px) {
 		padding: 0;

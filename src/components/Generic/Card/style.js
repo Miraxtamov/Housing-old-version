@@ -2,9 +2,17 @@ import styled from "styled-components";
 import { ReactComponent as heart } from "../../../assets/icons/heart.svg";
 
 export const Wrapper = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+	/* width: 100%; */
+	/* display: flex;
+	justify-content: space-between; */
+`;
+
+export const CardItem = styled.div`
+	position: relative;
+	width: 380px;
+	min-height: 250px;
+	border: 1px solid #e6e9ec;
+	border-radius: 3px;
 
 	&:hover {
 		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -12,20 +20,12 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const CardItem = styled.div`
-	position: relative;
-	width: 100%;
-	min-height: 250px;
-	border: 1px solid #e6e9ec;
-	border-radius: 3px;
-	padding: 1px;
-`;
-
 CardItem.Img = styled.img`
-	width: 100%;
+	width: 380px;
 	height: 220px;
 	min-height: 220px;
 	max-height: 220px;
+	object-fit: cover;
 `;
 
 CardItem.SaleProfileImg = styled.div`
@@ -88,11 +88,11 @@ CardItem.Title = styled.h1`
 	font-size: 16px;
 	line-height: 24px;
 	margin-top: 24px;
-	width: 90%;
-	margin: 24px auto 4px auto;
+	width: 100%;
+	/* margin: 24px auto 4px auto; */
 	white-space: nowrap;
 	cursor: pointer;
-	overflow: hidden;
+	/* overflow: hidden; */
 `;
 
 CardItem.Description = styled.div`
@@ -100,10 +100,10 @@ CardItem.Description = styled.div`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
-	width: 90%;
-	margin: auto;
+	width: 100%;
+	/* margin: auto; */
 	white-space: nowrap;
-	overflow: hidden;
+	/* overflow: hidden; */
 `;
 
 export const CardIcons = styled.div`
@@ -111,8 +111,9 @@ export const CardIcons = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-	width: 90%;
-	margin: 16px 20px;
+	width: 100%;
+	margin-top: 16px;
+	/* margin: 16px 20px; */
 	white-space: nowrap;
 `;
 

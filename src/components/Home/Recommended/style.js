@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-	width: 1348px;
+	width: 100%;
 	margin: auto;
 `;
 
@@ -28,23 +28,29 @@ Container.Card = styled.div`
 
 	.alice-carousel__stage {
 		display: flex;
-		gap: 20px;
+		gap: 40px;
+		margin-bottom: 32px;
+	}
+
+	.alice-carousel__dots {
+		margin-top: 0;
 	}
 `;
 
 export const ArrowsImg = styled.div`
+	width: 100%;
 	max-width: 1200px;
 	position: absolute;
 	top: 40%;
 
 	.left {
 		position: absolute;
-		right: 55px;
+		left: -100px;
 	}
 
 	.right {
 		position: absolute;
-		left: 1145px;
+		right: -100px;
 	}
 `;
 

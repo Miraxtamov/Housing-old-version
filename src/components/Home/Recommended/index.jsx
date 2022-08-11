@@ -12,7 +12,7 @@ const Recommended = () => {
 	const [dataItems, setDataItems] = useState();
 
 	useQuery(
-		"recommended",
+		["recommended"],
 		() => {
 			return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then(
 				(res) => res.json()
@@ -51,8 +51,6 @@ const Recommended = () => {
 						/>
 					</ArrowsImg>
 					<AliceCarousel
-						className="alice-carousel__prev-btn
-						alice-carousel__next-btn"
 						ref={slider}
 						responsive={{
 							0: {

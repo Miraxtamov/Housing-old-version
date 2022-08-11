@@ -6,7 +6,7 @@ import { CardContainer, Container } from "./style";
 const Favourite = () => {
 	const [dataItems, setDataItems] = useState();
 	useQuery(
-		"favourites",
+		["favourites"],
 		() => {
 			return fetch(
 				`https://houzing-app.herokuapp.com/api/v1/houses/getAll/favouriteList`,

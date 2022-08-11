@@ -16,7 +16,7 @@ const Card = ({ info }) => {
 	const [love, setLove] = useState(false);
 	const [id, setId] = useState();
 
-	useQuery("addFavourite", () => {
+	useQuery(["addFavourite"], () => {
 		fetch(
 			`https://houzing-app.herokuapp.com/api/v1/houses/addFavourite/${
 				id ? id : ""
@@ -61,38 +61,40 @@ const Card = ({ info }) => {
 					</CardItem.Sales>
 					<CardItem.ProfileImg src={cardProfile} />
 				</CardItem.SaleProfileImg>
-				<CardItem.Title onClick={onClick}>
-					{info?.address || "Title"}
-				</CardItem.Title>
-				<CardItem.Description>
-					{info?.description || "Description"}
-				</CardItem.Description>
-				<CardIcons>
-					<CardIcons.CardIcon>
-						<CardIcons.Img src={bed} />
-						<CardIcons.CardIconText>
-							{info?.houseDetails?.beds || 0} Beds
-						</CardIcons.CardIconText>
-					</CardIcons.CardIcon>
-					<CardIcons.CardIcon>
-						<CardIcons.Img src={bath} />
-						<CardIcons.CardIconText>
-							{info?.houseDetails?.bath || 0} Bath
-						</CardIcons.CardIconText>
-					</CardIcons.CardIcon>
-					<CardIcons.CardIcon>
-						<CardIcons.Img src={garage} />
-						<CardIcons.CardIconText>
-							{info?.houseDetails?.garage || 0} Garage
-						</CardIcons.CardIconText>
-					</CardIcons.CardIcon>
-					<CardIcons.CardIcon>
-						<CardIcons.Img src={ruler} />
-						<CardIcons.CardIconText>
-							{info?.houseDetails?.area || 0} Sq Ft
-						</CardIcons.CardIconText>
-					</CardIcons.CardIcon>
-				</CardIcons>
+				<div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+					<CardItem.Title onClick={onClick}>
+						{info?.address || "Title"}
+					</CardItem.Title>
+					<CardItem.Description>
+						{info?.description || "Description"}
+					</CardItem.Description>
+					<CardIcons>
+						<CardIcons.CardIcon>
+							<CardIcons.Img src={bed} />
+							<CardIcons.CardIconText>
+								{info?.houseDetails?.beds || 0} Beds
+							</CardIcons.CardIconText>
+						</CardIcons.CardIcon>
+						<CardIcons.CardIcon>
+							<CardIcons.Img src={bath} />
+							<CardIcons.CardIconText>
+								{info?.houseDetails?.bath || 0} Bath
+							</CardIcons.CardIconText>
+						</CardIcons.CardIcon>
+						<CardIcons.CardIcon>
+							<CardIcons.Img src={garage} />
+							<CardIcons.CardIconText>
+								{info?.houseDetails?.garage || 0} Garage
+							</CardIcons.CardIconText>
+						</CardIcons.CardIcon>
+						<CardIcons.CardIcon>
+							<CardIcons.Img src={ruler} />
+							<CardIcons.CardIconText>
+								{info?.houseDetails?.area || 0} Sq Ft
+							</CardIcons.CardIconText>
+						</CardIcons.CardIcon>
+					</CardIcons>
+				</div>
 				<CardItem.Hr />
 				<CardItemPriceLike>
 					<CardItem.Prices>

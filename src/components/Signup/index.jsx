@@ -9,11 +9,11 @@ const SignUp = () => {
 	const formik = useFormik({
 		initialValues: {
 			login: "",
+			email: "",
 			firstName: "",
 			lastName: "",
-			email: "",
-			userRole: "",
 			password: "",
+			userRole: "",
 			confirmPassword: "",
 		},
 		onSubmit: (value) => {
@@ -23,21 +23,23 @@ const SignUp = () => {
 					"Content-type": "application/json",
 				},
 				body: JSON.stringify({
-					login: value?.login,
+					// login: value?.login,
+					email: value?.email,
 					firstName: value?.firstName,
 					lastName: value?.lastName,
-					email: value?.email,
-					useRole: value?.useRole,
 					password: value?.password,
-					confirmPassword: value?.confirmPassword,
+					useRole: value?.userRole,
+					// confirmPassword: value?.confirmPassword,
 				}),
 			})
 				.then((res) => res.json())
 				.then((res) => {
-					if (res?.status === 200) {
-						navigate("/home");
+					if (res?.status >= 200 && res?.status <= 300) {
+						setTimeout(() => {
+							navigate("/signin");
+						}, 3000);
 					} else {
-						alert("Invalid user")
+						alert("Invalid");
 					}
 					console.log(res?.status);
 				})

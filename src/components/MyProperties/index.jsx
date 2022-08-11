@@ -10,7 +10,7 @@ const MyProperties = () => {
 	console.log(dataItems);
 
 	useQuery(
-		"houseMe",
+		["houseMe"],
 		() => {
 			fetch("https://houzing-app.herokuapp.com/api/v1/houses/me", {
 				method: "GET",
