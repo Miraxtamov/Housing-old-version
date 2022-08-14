@@ -1,9 +1,9 @@
 import Favourite from "../components/Favourite";
+import MyProfile from "../components/MyProfile";
 import MyProperties from "../components/MyProperties";
-import Generic from "../pages/Generic";
 
 export const user = [
-	{ id: 1, title: "My profile", path: "/profile", element: <Generic /> },
+	{ id: 1, title: "My profile", path: "/profile", element: <MyProfile /> },
 	{
 		id: 2,
 		title: "My Properties",

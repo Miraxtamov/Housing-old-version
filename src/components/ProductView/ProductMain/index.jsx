@@ -1,3 +1,4 @@
+import { Popover } from "antd";
 import React from "react";
 import Features from "./Features";
 import HouseOwner from "./HouseOwner";
@@ -10,6 +11,53 @@ import { Container, ProductViewLeft, Wrapper } from "./style";
 import WriteReview from "./WriteReview";
 
 const Main = ({ house }) => {
+	const content = (
+		<div className="share__wrapper">
+			<div>
+				<a
+					className="share__wrapper--link"
+					href="https://www.facebook.com/sharer/sharer.php?u=<https://houzing-house.vercel.app/>"
+				>
+					Facebook
+				</a>
+			</div>
+			<div>
+				<a className="share__wrapper--link" href="#">
+					Instagram
+				</a>
+			</div>
+			<div>
+				<a
+					href="https://twitter.com/share?url=//https://houzing-house.vercel.app/&amp;text=House%20Details&amp;hashtags=housedetails"
+					target="_blank"
+				>
+					Twitter
+				</a>
+			</div>
+			<div>
+				<a
+					className="share__wrapper--link"
+					href="mailto:?subject=<SUBJECT>&body=<BODY>"
+				>
+					Email
+				</a>
+			</div>
+			<div>
+				<a className="share__wrapper--link" href="#">
+					Telegram
+				</a>
+			</div>
+			<div>
+				<a
+					className="share__wrapper--link"
+					href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://houzing-house.vercel.app/"
+				>
+					Linkedin
+				</a>
+			</div>
+		</div>
+	);
+
 	console.log(house, "House");
 	return (
 		<Container>
@@ -20,12 +68,20 @@ const Main = ({ house }) => {
 							{house?.address || "Luxury Family Loft by Victoria Park"}
 						</ProductViewLeft.Title>
 						<ProductViewLeft.Wrapper>
-							<ProductViewLeft.Icons>
-								<ProductViewLeft.Icon bg>
-									<ProductViewLeft.Share />
-								</ProductViewLeft.Icon>
-								<ProductViewLeft.Text>Share</ProductViewLeft.Text>
-							</ProductViewLeft.Icons>
+							<Popover
+								trigger="click"
+								placement="bottomRight"
+								content={content}
+							>
+								<div style={{ cursor: "pointer" }}>
+									<ProductViewLeft.Icons>
+										<ProductViewLeft.Icon bg>
+											<ProductViewLeft.Share />
+										</ProductViewLeft.Icon>
+										<ProductViewLeft.Text>Share</ProductViewLeft.Text>
+									</ProductViewLeft.Icons>
+								</div>
+							</Popover>
 							<ProductViewLeft.Icons>
 								<ProductViewLeft.Icon bg style={{ marginLeft: "26px" }}>
 									<ProductViewLeft.Save />

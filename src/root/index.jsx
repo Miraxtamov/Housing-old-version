@@ -10,6 +10,8 @@ import SignUp from "../components/Signup";
 import Generic from "../pages/Generic";
 import Favourite from "../components/Favourite";
 import MyProperties from "../components/MyProperties";
+import MyProfile from "../components/MyProfile";
+import AddNew from "../components/AddNew";
 
 const Root = () => {
 	return (
@@ -24,9 +26,10 @@ const Root = () => {
 					/>
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
-					<Route path="/profile" element={<Generic />} />
+					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/myproperties" element={<MyProperties />} />
 					<Route path="/favourites" element={<Favourite />} />
+					<Route path="/addnew" element={<AddNew />} />
 					{navbar?.map((value) => {
 						return (
 							<Route key={value.id} path={value.path} element={value.element} />

@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+	width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
+	padding-right: 90px;
+	padding-left: 90px;
+
+	.favourite-center {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
 	@media (max-width: 768px) {
 		padding: 0;
@@ -20,7 +28,7 @@ Container.Description = styled.div`
 `;
 
 export const CardContainer = styled.div`
-	width: 100%;
+	/* width: 100%; */
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;

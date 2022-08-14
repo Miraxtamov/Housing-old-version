@@ -26,12 +26,28 @@ export const Wrapper = styled.div`
 
 export const ProductViewLeft = styled.div`
 	width: 72.5%;
+
+	.share__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 `;
 
 ProductViewLeft.Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	.share__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.share__wrapper--link {
+		color: var(--primaryColor) !important;
+	}
 `;
 
 ProductViewLeft.Title = styled.div`
@@ -153,4 +169,4 @@ ProductViewLeft.Line = styled.div`
 
 ProductViewLeft.Right = styled.div`
 	width: 280px;
-`
+`;

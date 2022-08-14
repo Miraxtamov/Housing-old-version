@@ -37,11 +37,13 @@ const Favourite = () => {
 			<Container.Description className="description">
 				Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
 			</Container.Description>
-			<CardContainer>
-				{dataItems?.map((value) => {
-					return <Card key={value.id} info={value} />;
-				})}
-			</CardContainer>
+			<div className="favourite-center">
+				<CardContainer>
+					{dataItems?.map((value) => {
+						return <Card key={value.id} info={value} />;
+					})}
+				</CardContainer>
+			</div>
 		</Container>
 	);
 };
