@@ -29,7 +29,7 @@ const Root = () => {
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/myproperties" element={<MyProperties />} />
 					<Route path="/favourites" element={<Favourite />} />
-					<Route path="/addnew" element={<AddNew />} />
+					<Route path="/post-new-ad" element={<AddNew />} />
 					{navbar?.map((value) => {
 						return (
 							<Route key={value.id} path={value.path} element={value.element} />

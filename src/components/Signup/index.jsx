@@ -20,7 +20,7 @@ const SignUp = () => {
 			fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
 				method: "POST",
 				headers: {
-					"Content-type": "application/json",
+					"Content-type": "Application/json",
 				},
 				body: JSON.stringify({
 					// login: value?.login,
@@ -28,26 +28,27 @@ const SignUp = () => {
 					firstName: value?.firstName,
 					lastName: value?.lastName,
 					password: value?.password,
-					useRole: value?.userRole,
+					// useRole: value?.userRole,
 					// confirmPassword: value?.confirmPassword,
 				}),
 			})
 				.then((res) => res.json())
-				.then((res) => {
-					if (res?.status >= 200 && res?.status <= 300) {
-						setTimeout(() => {
-							navigate("/signin");
-						}, 3000);
-					} else {
-						alert("Invalid");
-					}
-					console.log(res?.status);
-				})
-				.catch((err) => {
-					console.log(err);
-				});
+				.then(
+					(res) => {
+						console.log(res);
+						if (res.success) {
+							setTimeout(() => {
+								navigate("/home");
+							}, 5000);
+						} else {
+							alert("Invalid");
+						}
+					},
+					(err) => console.log(err)
+				);
 		},
-		validationSchema: Yup.object().shape({
+		onError: (err) => console.log(err),
+		validationSchema: Yup.object({
 			login: Yup.string().required("Fill in the Blank fields"),
 			firstName: Yup.string().required("Fill in the Blank fields"),
 			lastName: Yup.string().required("Fill in the Blank fields"),
@@ -69,12 +70,9 @@ const SignUp = () => {
 					<Form.Title>Registration</Form.Title>
 					<Form.Input
 						name="login"
-						id="login"
 						type={"text"}
 						placeholder="Login"
-						value={formik.values.login}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.login && formik.touched.login ? (
@@ -82,13 +80,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
+						id="fName"
 						name="firstName"
-						id="firstName"
 						type={"text"}
 						placeholder="First name"
-						value={formik.values.firstName}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.firstName && formik.touched.firstName ? (
@@ -96,13 +92,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
+						id="lName"
 						name="lastName"
-						id="lastName"
 						type={"text"}
 						placeholder="Last name"
-						value={formik.values.lastName}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.lastName && formik.touched.lastName ? (
@@ -110,13 +104,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
-						name="email"
 						id="email"
+						name="email"
 						type={"email"}
 						placeholder="Email"
-						value={formik.values.email}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.email && formik.touched.email ? (
@@ -124,13 +116,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
+						id="role"
 						name="useRole"
-						id="useRole"
 						type={"text"}
 						placeholder="User role"
-						value={formik.values.useRole}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.userRole && formik.touched.userRole ? (
@@ -138,13 +128,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
-						name="password"
 						id="password"
+						name="password"
 						type={"password"}
 						placeholder="Password"
-						value={formik.values.password}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.password && formik.touched.password ? (
@@ -152,13 +140,11 @@ const SignUp = () => {
 						) : null}
 					</div>
 					<Form.Input
-						name="confirmPassword"
 						id="confirmPassword"
+						name="confirmPassword"
 						type={"password"}
 						placeholder="Re-enter password"
-						value={formik.values.confirmPassword}
 						onChange={formik.handleChange}
-						onBlur={formik.handleBlur}
 					/>
 					<div style={{ marginBottom: "44px" }}>
 						{formik.errors.confirmPassword && formik.touched.confirmPassword ? (
