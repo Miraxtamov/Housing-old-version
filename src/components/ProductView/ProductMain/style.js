@@ -17,9 +17,9 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
 	display: flex;
-	max-width: 1440px;
-	padding-left: 130px;
-	padding-right: 130px;
+	max-width: 1220px;
+	padding-left: 20px;
+	padding-right: 20px;
 	width: 100%;
 	gap: 20px;
 `;

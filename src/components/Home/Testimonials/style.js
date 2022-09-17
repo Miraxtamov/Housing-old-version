@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-	width: 1348px;
-	margin: auto;
+	/* width: 1348px;
+	margin: auto; */
 	background: #f5f7fc;
 `;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
+	width: 100%;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 20px;
+	padding-left: 20px;
 `;
 
 Container.Title = styled.div`
@@ -30,10 +32,10 @@ Container.Card = styled.div`
 		display: none;
 	}
 
-    .alice-carousel__stage {
-      display: flex;
-      gap: 30px;
-    }
+	.alice-carousel__stage {
+		display: flex;
+		gap: 20px;
+	}
 `;
 
 export const ArrowsImg = styled.div`
@@ -43,12 +45,12 @@ export const ArrowsImg = styled.div`
 
 	.left {
 		position: absolute;
-		right: 55px;
+		right: 15px;
 	}
 
 	.right {
 		position: absolute;
-		left: 1145px;
+		left: 1200px;
 	}
 `;
 

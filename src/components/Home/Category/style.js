@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-	width: 1348px;
-	margin: auto;
-`
+export const Wrapper = styled.div``;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
+	width: 100%;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 20px;
+	padding-left: 20px;
 	margin-bottom: 96px;
 	position: relative;
 
@@ -31,18 +30,18 @@ Container.Desc = styled.div`
 `;
 
 export const ArrowsImg = styled.div`
-	max-width: 1180px;
+	max-width: 1100px;
 	position: absolute;
 	top: 50%;
 
 	.left {
 		position: absolute;
-		right: 55px;
+		right: 15px;
 	}
 
 	.right {
 		position: absolute;
-		left: 1145px;
+		left: 1200px;
 	}
 `;
 

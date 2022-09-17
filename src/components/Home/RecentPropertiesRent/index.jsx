@@ -37,7 +37,7 @@ const RecentPropertiesRent = () => {
 					Recent Properties for Rent
 				</Container.Title>
 				<Container.Desc className="description">
-					Recent Properties for Rent
+					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
 				</Container.Desc>
 				<Container.Card>
 					<ArrowsImg>

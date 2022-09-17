@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: var(--defaultColor);
-	padding-right: 130px;
-	padding-left: 130px;
+	padding-right: 20px;
+	padding-left: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 `;

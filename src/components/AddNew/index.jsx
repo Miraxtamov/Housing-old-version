@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useQuery } from "react-query";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import mapMarker from "../../assets/icons/mapMarker.svg";
 import {
@@ -20,6 +21,67 @@ const AddNew = () => {
 		lng: 69.2163,
 	});
 
+	useQuery("addPost", () => {
+		return fetch(`https://houzing-app.herokuapp.com/api/v1/houses`, {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+				"Content-type": "application/json",
+			},
+			body: JSON.ify({
+				address: "",
+				attachments: [
+					{
+						imgPath: "",
+					},
+				],
+				categoryId: 0,
+				city: "",
+				componentsDto: {
+					additional: "",
+					airCondition: true,
+					courtyard: true,
+					furniture: true,
+					gasStove: true,
+					internet: true,
+					tv: true,
+				},
+				country: "",
+				description: "",
+				homeAmenitiesDto: {
+					additional: "",
+					busStop: true,
+					garden: true,
+					market: true,
+					park: true,
+					parking: true,
+					school: true,
+					stadium: true,
+					subway: true,
+					superMarket: true,
+				},
+				houseDetails: {
+					area: 0,
+					bath: 0,
+					beds: 0,
+					garage: 0,
+					room: 0,
+					yearBuilt: 0,
+				},
+				locations: {
+					latitude: 0,
+					longitude: 0,
+				},
+				name: "",
+				price: 0,
+				region: "",
+				salePrice: 0,
+				status: true,
+				zipCode: "",
+			}),
+		}).then((res) => res.json().then((err) => console.warn(err)));
+	});
+
 	const containerStyle = {
 		width: "100%",
 		height: "480px",
@@ -32,9 +94,11 @@ const AddNew = () => {
 		});
 	};
 
+	const onChange = () => {};
+
 	return (
 		<Wrapper>
-			<Container>
+			<Container> 
 				<AddTitle>Add new property</AddTitle>
 				<NewPropertyContainer>
 					<NewSectionWrapper>
@@ -43,13 +107,19 @@ const AddNew = () => {
 						</NewSectionWrapper.Title>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Property title*"
 								type="text"
 							/>
-							<InputsGlobalContainer.Input placeholder="Type" type="text" />
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Type"
+								type="text"
+							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer mbn>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								mbm
 								placeholder="Property Description*"
 								type="text"
@@ -60,6 +130,7 @@ const AddNew = () => {
 						<NewSectionWrapper.Title>Additional</NewSectionWrapper.Title>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Property title*"
 								type="text"
 							/>
@@ -71,31 +142,59 @@ const AddNew = () => {
 							</InputsGlobalContainer.Select>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer>
-							<InputsGlobalContainer.Input placeholder="Label" type="text" />
-							<InputsGlobalContainer.Input placeholder="Material" type="text" />
-							<InputsGlobalContainer.Input placeholder="Rooms" type="text" />
-						</InputsGlobalContainer>
-						<InputsGlobalContainer>
-							<InputsGlobalContainer.Input placeholder="Beds" type="text" />
-							<InputsGlobalContainer.Input placeholder="Baths" type="text" />
-							<InputsGlobalContainer.Input placeholder="Garages" type="text" />
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Label"
+								type="text"
+							/>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Material"
+								type="text"
+							/>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Rooms"
+								type="text"
+							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Beds"
+								type="text"
+							/>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Baths"
+								type="text"
+							/>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
+								placeholder="Garages"
+								type="text"
+							/>
+						</InputsGlobalContainer>
+						<InputsGlobalContainer>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Year bulid"
 								type="text"
 							/>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Home area (sqft)"
 								type="text"
 							/>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Lot dimensions"
 								type="text"
 							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer mbn>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								placeholder="Lot area (sqft)"
 								type="text"
 							/>
@@ -105,20 +204,24 @@ const AddNew = () => {
 						<NewSectionWrapper.Title>Price</NewSectionWrapper.Title>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Price ($)"
 							/>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Price Prefix"
 							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer mbn>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Price Suffix"
 							/>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Price Custom"
 							/>
@@ -131,12 +234,14 @@ const AddNew = () => {
 								<option value="Regions">Regions</option>
 							</InputsGlobalContainer.Select>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Friendly address"
 							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Map location"
 							/>
@@ -157,8 +262,13 @@ const AddNew = () => {
 							</LoadScript>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer mbn>
-							<InputsGlobalContainer.Input type="text" placeholder="Latidude" />
 							<InputsGlobalContainer.Input
+								onChange={onChange}
+								type="text"
+								placeholder="Latidude"
+							/>
+							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Logtitude"
 							/>
@@ -186,12 +296,14 @@ const AddNew = () => {
 						<MediaImgWrapper.Button>Upload</MediaImgWrapper.Button>
 						<InputsGlobalContainer>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Video link"
 							/>
 						</InputsGlobalContainer>
 						<InputsGlobalContainer mbn>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								mbm
 								type="text"
 								placeholder="Virtual tour"
@@ -337,10 +449,12 @@ const AddNew = () => {
 						</NewSectionWrapper.Title>
 						<InputsGlobalContainer mbn>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Energy class"
 							/>
 							<InputsGlobalContainer.Input
+								onChange={onChange}
 								type="text"
 								placeholder="Energy Index in kWh/m2a"
 							/>

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { ReactComponent as heart } from "../../../assets/icons/heart.svg";
 
 export const Wrapper = styled.div`
-	/* width: 100%; */
-	/* display: flex;
+	/* width: 100%;
+	display: flex;
 	justify-content: space-between; */
 `;
 

@@ -6,12 +6,13 @@ export const Container = styled.div`
 `;
 
 export const FooterContainer = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	padding: 24px 130px 24px 130px;
+	padding: 24px 20px 24px 20px;
 `;
 
 export const FooterCol = styled.div``;
@@ -83,13 +84,14 @@ export const FooterHr = styled.hr`
 `;
 
 export const FooterCopyright = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: var(--primaryColor);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 24px 130px 24px 130px;
+	padding: 24px 20px 24px 20px;
 `;
 
 FooterCopyright.Logo = styled.div`

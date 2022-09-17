@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-	width: 1348px;
+	width: 100$;
 	margin: auto;
 `;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
-  margin-bottom: 48px;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-bottom: 48px;
 `;
 
 Container.Title = styled.div``;
@@ -30,6 +31,12 @@ Container.Card = styled.div`
 	.alice-carousel__stage {
 		display: flex;
 		gap: 20px;
+		margin-bottom: 32px;
+	}
+
+	.alice-carousel__dots {
+		margin-top: 0;
+	}
 `;
 
 export const ArrowsImg = styled.div`
@@ -39,12 +46,12 @@ export const ArrowsImg = styled.div`
 
 	.left {
 		position: absolute;
-		right: 55px;
+		right: 15px;
 	}
 
 	.right {
 		position: absolute;
-		left: 1145px;
+		left: 1200px;
 	}
 `;
 

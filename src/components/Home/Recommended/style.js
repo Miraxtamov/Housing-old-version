@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-right: 130px;
-	padding-left: 130px;
+	max-width: 1220px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-left: auto;
+	margin-right: auto;
 `;
 
 Container.Title = styled.div``;
@@ -28,7 +29,7 @@ Container.Card = styled.div`
 
 	.alice-carousel__stage {
 		display: flex;
-		gap: 40px;
+		gap: 20px;
 		margin-bottom: 32px;
 	}
 
@@ -45,12 +46,12 @@ export const ArrowsImg = styled.div`
 
 	.left {
 		position: absolute;
-		left: -100px;
+		left: -65px;
 	}
 
 	.right {
 		position: absolute;
-		right: -100px;
+		right: -65px;
 	}
 `;
 

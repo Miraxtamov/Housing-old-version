@@ -17,11 +17,13 @@ const PropertyDetails = ({ house }) => {
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Property Size:</SubTitle>
-						<SubDesc>1560 Sq Ft</SubDesc>
+						<SubDesc>{house?.area || "10"} Sq Ft</SubDesc>
 					</Wrapper.Box>
 					<Wrapper.Box>
 						<SubTitle>Year Bulit:</SubTitle>
-						<SubDesc>{house?.houseDetails?.yearBuilt}</SubDesc>
+						<SubDesc>
+							{house?.houseDetails?.yearBuilt || "No information provided"}
+						</SubDesc>
 					</Wrapper.Box>
 				</Wrapper.Col>
 				<Wrapper.Col>

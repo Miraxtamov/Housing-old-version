@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
 	width: 100%;
 	height: fit-content;
-	max-width: 1440px;
+	max-width: 1220px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 24px 25px;
@@ -64,8 +64,8 @@ MyProfileContainer.Title = styled.div`
 MyProfileContainer.ImgContainer = styled.div``;
 
 MyProfileContainer.ProfileImg = styled.img`
-	width: 130px;
-	height: 130px;
+	width: 20px;
+	height: 20px;
 	object-fit: cover;
 	margin-top: 24px;
 	margin-bottom: 24px;

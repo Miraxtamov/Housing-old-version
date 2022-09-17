@@ -10,12 +10,13 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 14px 130px 14px 130px;
+	padding: 14px 20px 14px 20px;
 
 	-webkit-touch-callout: none; // iOS Safari
 	-webkit-user-select: none; // Safari

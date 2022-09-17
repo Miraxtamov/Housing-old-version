@@ -7,11 +7,11 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
 	width: 100%;
-	max-width: 1440px;
+	max-width: 1220px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 130px;
-	padding-right: 130px;
+	padding-left: 20px;
+	padding-right: 20px;
 `;
 
 export const AddTitle = styled.div`

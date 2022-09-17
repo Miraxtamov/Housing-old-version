@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
 	position: relative;
 	top: 8px;
 `;

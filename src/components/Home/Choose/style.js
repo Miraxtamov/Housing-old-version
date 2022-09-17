@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
 	background-color: #f5f7fc;
+	margin-top: 48px;
+	margin-bottom: 96px;
 `;
 
 export const ChooseContainer = styled.div`
-	margin-top: 48px;
-	margin-bottom: 96px;
-	padding: 48px 130px;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 48px 20px;
 `;
 
 ChooseContainer.Title = styled.div``;
@@ -21,7 +22,7 @@ ChooseContainer.Desc = styled.div`
 export const ChooseCards = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-  column-gap: 81px;
+	column-gap: 81px;
 `;
 
 export const ChooseCard = styled.div`
@@ -38,6 +39,7 @@ ChooseCard.Title = styled.div`
 	font-size: 18px;
 	line-height: 28px;
 	margin-bottom: 8px;
+	white-space: nowrap;
 `;
 
 ChooseCard.Desc = styled.div`

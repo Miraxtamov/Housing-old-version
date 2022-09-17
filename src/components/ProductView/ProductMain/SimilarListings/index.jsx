@@ -33,7 +33,7 @@ const Recommended = () => {
 	return (
 		<Wrapper>
 			<Container>
-				<Container.Title className="title">Recommended</Container.Title>
+				<Container.Title className="title">Similar listings</Container.Title>
 				<Container.Description className="description">
 					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
 				</Container.Description>

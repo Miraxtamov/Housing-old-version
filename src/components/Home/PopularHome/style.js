@@ -1,18 +1,15 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+	width: 100%;
+`;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	margin-bottom: 96px;
 `;
 
 export const TextsBtnImg = styled.div`
-	/* width: 100%; */
+	width: 100%;
 	position: relative;
 `;
 
@@ -29,8 +26,6 @@ TextsBtnImg.TextsBtn = styled.div`
 	width: 100%;
 	position: absolute;
 	top: 204px;
-	/* left: 38%; */
-	/* transform: translate(50%, -100%); */
 	display: flex;
 	justify-content: center;
 	flex-direction: column;

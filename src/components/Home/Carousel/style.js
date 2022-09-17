@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const ArrowsImg = styled.div`
-	max-width: 1180px;
+	max-width: 1220px;
 	position: absolute;
 	top: 400px;
 
@@ -117,8 +117,8 @@ HomeTextsContainer.ImgText = styled.div`
 HomeTextsContainer.Img = styled.img`
 	color: var(--defaultColor);
 
-	path {
-		fill: var(--defaultColor);
+	svg path {
+		fill: var(--defaultColor) !important;
 	}
 `;
 

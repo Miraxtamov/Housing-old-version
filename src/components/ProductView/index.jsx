@@ -55,7 +55,7 @@ export const ProductView = () => {
 
 	return (
 		<Container>
-			<PhotoBox />
+			<PhotoBox house={house}/>
 			<Main house={house} />
 		</Container>
 	);

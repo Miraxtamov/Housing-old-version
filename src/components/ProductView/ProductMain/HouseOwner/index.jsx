@@ -13,13 +13,13 @@ import {
 	Title,
 } from "./style";
 
-const HouseOwner = () => {
+const HouseOwner = ({ house }) => {
 	return (
 		<OwnerCard>
 			<PersonInfo>
 				<PersonImg src={user} />
 				<div>
-					<Title>Darrel Steward</Title>
+					<Title>{`${house?.user?.firstname} ${house?.user?.lastname}`}</Title>
 					<PhoneNumber>(123)456-7890</PhoneNumber>
 				</div>
 			</PersonInfo>

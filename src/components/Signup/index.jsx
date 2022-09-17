@@ -8,13 +8,13 @@ const SignUp = () => {
 	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: {
-			login: "",
+			// login: "",
 			email: "",
 			firstName: "",
 			lastName: "",
 			password: "",
-			userRole: "",
-			confirmPassword: "",
+			// userRole: "",
+			// confirmPassword: "",
 		},
 		onSubmit: (value) => {
 			fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
@@ -70,7 +70,7 @@ const SignUp = () => {
 					<Form.Title>Registration</Form.Title>
 					<Form.Input
 						name="login"
-						type={"text"}
+						type="text"
 						placeholder="Login"
 						onChange={formik.handleChange}
 					/>
@@ -82,7 +82,7 @@ const SignUp = () => {
 					<Form.Input
 						id="fName"
 						name="firstName"
-						type={"text"}
+						type="text"
 						placeholder="First name"
 						onChange={formik.handleChange}
 					/>
@@ -94,7 +94,7 @@ const SignUp = () => {
 					<Form.Input
 						id="lName"
 						name="lastName"
-						type={"text"}
+						type="text"
 						placeholder="Last name"
 						onChange={formik.handleChange}
 					/>
@@ -106,7 +106,7 @@ const SignUp = () => {
 					<Form.Input
 						id="email"
 						name="email"
-						type={"email"}
+						type="email"
 						placeholder="Email"
 						onChange={formik.handleChange}
 					/>
@@ -118,7 +118,7 @@ const SignUp = () => {
 					<Form.Input
 						id="role"
 						name="useRole"
-						type={"text"}
+						type="text"
 						placeholder="User role"
 						onChange={formik.handleChange}
 					/>
@@ -130,7 +130,7 @@ const SignUp = () => {
 					<Form.Input
 						id="password"
 						name="password"
-						type={"password"}
+						type="password"
 						placeholder="Password"
 						onChange={formik.handleChange}
 					/>
@@ -142,7 +142,7 @@ const SignUp = () => {
 					<Form.Input
 						id="confirmPassword"
 						name="confirmPassword"
-						type={"password"}
+						type="password"
 						placeholder="Re-enter password"
 						onChange={formik.handleChange}
 					/>

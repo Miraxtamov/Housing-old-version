@@ -1,46 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-	width: 100%;
-`;
-
-export const Container = styled.div`
-	max-width: 1220px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-right: 20px;
-	padding-left: 20px;
-`;
-
-Container.TitleSearch = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 34px;
-	margin-bottom: 32px;
-`;
-
-Container.Title = styled.div`
-	color: var(--primaryColor);
-	letter-spacing: -0.02em;
-	font-weight: 600;
-	font-size: 28px;
-	line-height: 36px;
-`;
-
-Container.Search = styled.input`
-	width: 200px;
-	border: none;
-	outline: none;
-	border-bottom: 2px solid #e6e9ec;
-	color: var(--secondaryColor);
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 20px;
-	padding: 0 4px 4px 4px;
-`;
-
 export const MyPropertiesContainer = styled.table`
 	width: 100%;
 	border: 1px solid #e6e9ec;
@@ -48,11 +7,10 @@ export const MyPropertiesContainer = styled.table`
 	border-radius: 3px;
 	background: var(--defaultColor);
 	text-align: left;
-	margin-bottom: 96px;
 `;
 
 MyPropertiesContainer.TR = styled.tr`
-	margin-left: 16px;
+	margin-bottom: 16px;
 `;
 
 MyPropertiesContainer.TH = styled.th`
@@ -81,9 +39,10 @@ MyPropertiesContainer.IMG = styled.img`
 `;
 
 MyPropertiesContainer.Featured = styled.div`
-	position: absolute;
-	top: 38%;
-	left: 12.39%;
+	position: relative;
+	width: 71px;
+	top: -79%;
+	left: 4px;
 	border-radius: 3px;
 	background-color: var(--activeColor);
 	color: var(--defaultColor);
@@ -91,6 +50,7 @@ MyPropertiesContainer.Featured = styled.div`
 	font-weight: 600;
 	font-size: 10px;
 	line-height: 13px;
+	z-index: 99;
 `;
 
 MyPropertiesContainer.Center = styled.div`
@@ -106,6 +66,11 @@ MyPropertiesContainer.CenterTitle = styled.div`
 	line-height: 24px;
 	margin-bottom: 4px;
 	white-space: nowrap;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.7;
+	}
 `;
 
 MyPropertiesContainer.CenterDescription = styled.div`
@@ -144,4 +109,31 @@ MyPropertiesContainer.RightForSale = styled.div`
 	background-color: var(--primaryColor);
 	border-radius: 3px;
 	white-space: nowrap;
+`;
+
+MyPropertiesContainer.Info = styled.div`
+	color: var(--secondaryColor);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+`;
+
+MyPropertiesContainer.Edit = styled.img`
+	color: var(--secondaryColor);
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
+`;
+
+MyPropertiesContainer.Trash = styled.img`
+	cursor: pointer;
+	margin-left: 33px;
+
+	&:active {
+		transform: scale(0.97);
+	}
 `;

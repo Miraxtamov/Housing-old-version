@@ -36,13 +36,13 @@ const Location = ({ house }) => {
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>Area:</Subtitle>
-					<Description>Greenville</Description>
+					<Description>{house?.area || "0"}</Description>
 				</Row.Item>
 			</Row>
 			<Row style={{ marginTop: "24px", marginBottom: "24px" }}>
 				<Row.Item>
 					<Subtitle>State/County:</Subtitle>
-					<Description>Washington</Description>
+					<Description>{house?.country}</Description>
 				</Row.Item>
 				<Row.Item>
 					<Subtitle>Zip:</Subtitle>

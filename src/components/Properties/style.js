@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const PropertiesContainer = styled.div`
 	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-right: 90px;
-	padding-left: 90px;
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 20px;
+	padding-left: 20px;
 
 	@media (max-width: 768px) {
 		padding: 0;
@@ -67,7 +68,7 @@ export const WrapperFlex = styled.div`
 `;
 
 export const CardContainer = styled.div`
-	/* width: 100%; */
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;

@@ -46,6 +46,15 @@ const Card = ({ info }) => {
 		navigate(`/properties/${info?.id}`);
 	};
 
+	const text =
+		(info?.name || "name") +
+		" " +
+		(info?.address || "address") +
+		" " +
+		(info?.city || "City") +
+		" " +
+		(info?.country || "Country");
+
 	return (
 		<Wrapper>
 			<CardItem>
@@ -66,7 +75,7 @@ const Card = ({ info }) => {
 						{info?.address || "Title"}
 					</CardItem.Title>
 					<CardItem.Description>
-						{info?.description || "Description"}
+						{text.length > 40 ? text.slice(0, 40) + "..." : text}
 					</CardItem.Description>
 					<CardIcons>
 						<CardIcons.CardIcon>
